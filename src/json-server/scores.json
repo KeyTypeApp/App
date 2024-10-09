@@ -1,0 +1,26 @@
+{
+  "scores": [
+    {
+      "id": "82542f82-5e1e-4a41-8e76-3ff3d89833ce",
+      "scoreID": "2883d736-88fc-4026-b233-10a4f0284672",
+      "score": 385,
+      "correct": 83,
+      "incorrect": 3,
+      "missedAlphabet": [
+        {
+          "alphabet": "s",
+          "counts": 1
+        },
+        {
+          "alphabet": "a",
+          "counts": 1
+        },
+        {
+          "alphabet": "o",
+          "counts": 1
+        }
+      ],
+      "accuracyRate": 96.5
+    }
+  ]
+}
