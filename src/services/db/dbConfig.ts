@@ -1,6 +1,4 @@
 export const dbConfig = {
-    dbname : process.env.POSTGRES_DB!,
-    dbuser : process.env.POSTGRES_USER!,
-    dbpass : process.env.POSTGRES_PASSWORD!,
-    dburl : process.env.DATABASE_URL
+    users_url: process.env.USERS_URL,
+    scores_url: process.env.SCORES_URL,
 }
