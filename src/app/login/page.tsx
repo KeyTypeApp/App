@@ -1,6 +1,14 @@
-import { dbConfig } from "@/services/db/dbConfig"
-export default function Login() {
+"use client";
+
+import Login from "./components/Login";
+import { dbConfig } from "@/services/db/dbConfig";
+
+export default function Home() {
   return (
-    <p>login test</p>
-  )
-}
+    <>
+      <div>
+        <Login/>
+      </div>
+    </>
+  );
+};
