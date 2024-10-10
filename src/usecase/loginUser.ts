@@ -1,3 +1,5 @@
+import { dbConfig } from "@/services/db/dbConfig";
+
 interface User {
     id: string;
     name: string;
@@ -6,7 +8,10 @@ interface User {
   
   export const loginUser = async (id: string, pass: string): Promise<User | null> => {
     try {
-      const res = await fetch("http://localhost:3011/users");
+      if (!dbConfig.users_url) {
+        throw new Error("dbConfig.tsを確認");
+      }
+      const res = await fetch(dbConfig.users_url);
       const users: User[] = await res.json();
       return users.find(user => user.id === id && user.pass === pass) || null;
     } catch (error) {
