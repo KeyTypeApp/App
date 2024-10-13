@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <div>
-        <Login/>
+        <Login users_url={dbConfig.users_url} />
       </div>
     </>
   );

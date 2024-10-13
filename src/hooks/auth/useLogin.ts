@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import { loginUser } from "@/usecase/loginUser";
 
-const useLogin = () => {
+const useLogin = (users_url: string) => {
   const [id, setId] = useState<string>("")
   const [pass, setPass] = useState<string>("")
   const [userInfo, setUserInfo] = useState<{id: string, pass: string, name: string} | null>(null);
@@ -11,7 +11,8 @@ const useLogin = () => {
     e.preventDefault();
     setErrorMessage("");
 
-    const confirm = await loginUser(id, pass);
+    const confirm = await loginUser(id, pass, users_url);
+    console.log(confirm);
     if (confirm) {
       setUserInfo(confirm);
     } else {

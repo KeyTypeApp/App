@@ -2,7 +2,11 @@ import useLogin from "@/hooks/auth/useLogin";
 import UserInfo from "./UserInfo";
 import LoginForm from "./Login_Form";
 
-const Login = () => {
+interface LoginProps {
+  users_url: string;
+}
+
+const Login = ({ users_url }: LoginProps) => {
   const {
     id,
     pass,
@@ -11,7 +15,7 @@ const Login = () => {
     setId,
     setPass,
     handleSubmit
-  } = useLogin();
+  } = useLogin(users_url);
 
   return (
     <>
@@ -25,7 +29,7 @@ const Login = () => {
         />
         {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
       </div>
-      {userInfo && <UserInfo id={userInfo.id} pass={userInfo.pass} name={userInfo.name} />}
+      {userInfo && <UserInfo id={userInfo.id} name={userInfo.name} pass={userInfo.pass} />}
     </>
   );
 };
