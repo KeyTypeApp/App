@@ -1,5 +1,10 @@
+import { dbConfig } from "@/services/db/dbConfig";
+import RegisterPage from "./components/Register";
+
 export default function Register() {
   return (
-    <p>register</p>
-  )
-}
+    <main>
+      <RegisterPage users_url={dbConfig.users_url} />
+    </main>
+  );
+};

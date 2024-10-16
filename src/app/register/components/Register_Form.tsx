@@ -1,7 +1,7 @@
-import useNavigate from "@/hooks/navigate/useNavigate";
+// import useNavigate from "@/hooks/navigate/useNavigate";
 import { FormEvent } from "react";
 
-interface LoginFormProps {
+interface RegisterFormProps {
     name: string;
     pass: string;
     onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -9,11 +9,11 @@ interface LoginFormProps {
     onSubmitForm: (e: FormEvent) => void;
 }
 
-const LoginForm = ({name, pass, onChangeName, onChangePass, onSubmitForm}: LoginFormProps) => {
-  const { handleClick } = useNavigate();
+const RegisterForm = ({name, pass, onChangeName, onChangePass, onSubmitForm}: RegisterFormProps) => {
+//   const { handleClick } = useNavigate();
   return (
     <form onSubmit={onSubmitForm} className="bg-white shadow-lg rounded-lg p-10 max-w-xs mx-auto mt-12 border border-gray-300">
-      <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">LOGIN</h1>
+      <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">REGISTER</h1>
       <div className="mb-6">
         <input
           type="text"
@@ -38,9 +38,9 @@ const LoginForm = ({name, pass, onChangeName, onChangePass, onSubmitForm}: Login
         type="submit"
         className="w-full text-white bg-gradient-to-r from-blue-500 to-purple-600 font-semibold rounded-lg py-2 hover:from-blue-600 hover:to-purple-700 transition duration-300 ease-in-out text-lg"
       >
-        LOGIN
+        REGISTER
       </button>
-      <p
+      {/* <p
         className="text-center mt-4 text-gray-600 text-sm"
       >
         Don't have an account?
@@ -50,9 +50,9 @@ const LoginForm = ({name, pass, onChangeName, onChangePass, onSubmitForm}: Login
         >
           register
         </span>
-      </p>
+      </p> */}
     </form>
   );
 };
 
-export default LoginForm
+export default RegisterForm

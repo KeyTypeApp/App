@@ -1,14 +1,10 @@
-"use client";
-
-import Login from "./components/Login";
 import { dbConfig } from "@/services/db/dbConfig";
+import LoginPage from "./components/Login";
 
-export default function Home() {
+export default function Login() {
   return (
-    <>
-      <div>
-        <Login users_url={dbConfig.users_url} />
-      </div>
-    </>
+    <main>
+      <LoginPage users_url={dbConfig.users_url} />
+    </main>
   );
 };

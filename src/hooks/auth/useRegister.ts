@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
-import { loginUser } from "@/usecase/loginUser";
+import { registerUser } from "@/usecase/registerUser";
 
-const useLogin = (users_url: string) => {
+const useRegister = (users_url: string) => {
   const [name, setName] = useState<string>("")
   const [pass, setPass] = useState<string>("")
   const [userInfo, setUserInfo] = useState<{id: string, name: string, pass: string} | null>(null);
@@ -11,12 +11,12 @@ const useLogin = (users_url: string) => {
     e.preventDefault();
     setErrorMessage("");
 
-    const confirm = await loginUser(name, pass, users_url);
-    if (confirm) {
+    const confirm = await registerUser(name, pass, users_url);
+    if (!confirm) {
       setUserInfo(confirm);
     } else {
       setUserInfo(null);
-      setErrorMessage("名前またはパスワードが正しくありません。");
+      setErrorMessage("その名前はすでに使われています。");
     }
   };
 
@@ -31,4 +31,4 @@ const useLogin = (users_url: string) => {
   };
 };
 
-export default useLogin;
+export default useRegister;

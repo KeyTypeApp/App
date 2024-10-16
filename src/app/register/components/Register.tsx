@@ -1,14 +1,14 @@
 "use client"
 
-import useLogin from "@/hooks/auth/useLogin";
-import LoginForm from "./Login_Form";
+import useRegister from "@/hooks/auth/useRegister";
+import RegisterForm from "./Register_Form";
 import UserInfo from "./UserInfo";
 
-interface LoginProps {
+interface RegisterProps {
   users_url: string | undefined;
 }
 
-const LoginPage = ({ users_url }: LoginProps) => {
+const RegisterPage = ({ users_url }: RegisterProps) => {
   const {
     name,
     pass,
@@ -17,12 +17,12 @@ const LoginPage = ({ users_url }: LoginProps) => {
     setName,
     setPass,
     handleSubmit
-  } = useLogin(users_url!);
+  } = useRegister(users_url!);
 
   return (
     <>
       <div>
-        <LoginForm
+        <RegisterForm
           name={name}
           pass={pass}
           onChangeName={(e) => setName(e.target.value)}
@@ -36,4 +36,4 @@ const LoginPage = ({ users_url }: LoginProps) => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
