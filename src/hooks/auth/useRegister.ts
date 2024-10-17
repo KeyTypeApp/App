@@ -1,21 +1,21 @@
 import { FormEvent, useState } from "react";
-import { registerUser } from "@/usecase/registerUser";
+import { processRegister } from "@/usecase/processRegister";
 
 const useRegister = (users_url: string) => {
   const [name, setName] = useState<string>("")
   const [pass, setPass] = useState<string>("")
-  const [userInfo, setUserInfo] = useState<{id: string, name: string, pass: string} | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string>("")
   const [errorMessage, setErrorMessage] = useState<string>("")
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSuccessMessage("");
     setErrorMessage("");
 
-    const confirm = await registerUser(name, pass, users_url);
-    if (!confirm) {
-      setUserInfo(confirm);
+    const confirm = await processRegister(name, pass, users_url);
+    if (confirm) {
+      setSuccessMessage("新規登録しました。");
     } else {
-      setUserInfo(null);
       setErrorMessage("その名前はすでに使われています。");
     }
   };
@@ -23,7 +23,7 @@ const useRegister = (users_url: string) => {
   return {
     name,
     pass,
-    userInfo,
+    successMessage,
     errorMessage,
     setName,
     setPass,

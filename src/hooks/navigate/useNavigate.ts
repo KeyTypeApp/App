@@ -3,8 +3,8 @@ import { useRouter } from "next/navigation";
 const useNavigate = () => {
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push("/register")  ;
+  const handleClick = (path: string) => {
+    router.push(path);
   };
 
   return {

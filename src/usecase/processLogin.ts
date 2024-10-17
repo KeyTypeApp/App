@@ -4,7 +4,7 @@ interface User {
     pass: string;
   }
   
-  export const registerUser = async (name: string, pass: string, users_url: string): Promise<User | null> => {
+  export const processLogin = async (name: string, pass: string, users_url: string): Promise<User | null> => {
     try {
       const res = await fetch(users_url);
       const users: User[] = await res.json();

@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { loginUser } from "@/usecase/loginUser";
+import { processLogin } from "@/usecase/processLogin";
 
 const useLogin = (users_url: string) => {
   const [name, setName] = useState<string>("")
@@ -11,7 +11,7 @@ const useLogin = (users_url: string) => {
     e.preventDefault();
     setErrorMessage("");
 
-    const confirm = await loginUser(name, pass, users_url);
+    const confirm = await processLogin(name, pass, users_url);
     if (confirm) {
       setUserInfo(confirm);
     } else {

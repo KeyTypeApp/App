@@ -1,4 +1,4 @@
-// import useNavigate from "@/hooks/navigate/useNavigate";
+import useNavigate from "@/hooks/navigate/useNavigate";
 import { FormEvent } from "react";
 
 interface RegisterFormProps {
@@ -10,7 +10,7 @@ interface RegisterFormProps {
 }
 
 const RegisterForm = ({name, pass, onChangeName, onChangePass, onSubmitForm}: RegisterFormProps) => {
-//   const { handleClick } = useNavigate();
+  const { handleClick } = useNavigate();
   return (
     <form onSubmit={onSubmitForm} className="bg-white shadow-lg rounded-lg p-10 max-w-xs mx-auto mt-12 border border-gray-300">
       <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">REGISTER</h1>
@@ -40,17 +40,17 @@ const RegisterForm = ({name, pass, onChangeName, onChangePass, onSubmitForm}: Re
       >
         REGISTER
       </button>
-      {/* <p
+      <p
         className="text-center mt-4 text-gray-600 text-sm"
       >
-        Don't have an account?
+        already have an account?
         <span
-          onClick={handleClick}
+          onClick={() => handleClick("/login")}
           className="text-blue-500 hover:underline"
         >
-          register
+          login
         </span>
-      </p> */}
+      </p>
     </form>
   );
 };

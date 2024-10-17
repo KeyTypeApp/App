@@ -45,7 +45,7 @@ const LoginForm = ({name, pass, onChangeName, onChangePass, onSubmitForm}: Login
       >
         Don't have an account?
         <span
-          onClick={handleClick}
+          onClick={() => handleClick("/register")}
           className="text-blue-500 hover:underline"
         >
           register
