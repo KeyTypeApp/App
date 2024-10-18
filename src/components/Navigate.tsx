@@ -2,25 +2,29 @@ import { useRouter } from "next/navigation";
 
 interface NavigateProps {
   message: string;
-  linkPath: string;
-  linkText: string;
+  path: string;
+  text: string;
 }
 
-const Navigate = ({ message, linkPath, linkText }: NavigateProps) => {
+const Navigate = ({ message, path, text }: NavigateProps) => {
   const router = useRouter();
+
+  const handleClick = () => {
+    router.push(path);
+  };
   return (
     <p
       className="text-center mt-4 text-gray-600 text-sm"
     >
-      Don't have an account?
+      {message}
       <span
-        onClick={() => handleClick("/register")}
+        onClick={handleClick}
         className="text-blue-500 hover:underline"
       >
-        register
+        {text}
       </span>
     </p>
   );
-}
+};
 
 export default Navigate;

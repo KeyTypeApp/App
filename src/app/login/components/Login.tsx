@@ -1,7 +1,7 @@
 "use client"
 
 import useLogin from "@/hooks/auth/useLogin";
-import LoginForm from "./Login_Form";
+import LoginForm from "./LoginForm";
 import UserInfo from "./UserInfo";
 
 interface LoginProps {

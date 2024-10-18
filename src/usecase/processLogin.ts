@@ -8,6 +8,7 @@ interface User {
     try {
       const res = await fetch(users_url);
       const users: User[] = await res.json();
+      console.log(users);
       return users.find(user => user.name === name && user.pass === pass) || null;
     } catch (error) {
       console.error("エラー", error);

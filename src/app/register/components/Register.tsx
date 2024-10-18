@@ -1,7 +1,7 @@
 "use client"
 
 import useRegister from "@/hooks/auth/useRegister";
-import RegisterForm from "./Register_Form";
+import RegisterForm from "./RegisterForm";
 
 interface RegisterProps {
   users_url: string | undefined;

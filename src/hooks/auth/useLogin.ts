@@ -12,6 +12,7 @@ const useLogin = (users_url: string) => {
     setErrorMessage("");
 
     const confirm = await processLogin(name, pass, users_url);
+    console.log(confirm);
     if (confirm) {
       setUserInfo(confirm);
     } else {
