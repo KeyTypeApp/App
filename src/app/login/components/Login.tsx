@@ -7,7 +7,9 @@ interface LoginProps {
   users_url: string | undefined;
 }
 
-const LoginPage = ({ users_url }: LoginProps) => {
+const LoginPage = ({
+  users_url
+}: LoginProps) => {
   const {
     name,
     pass,

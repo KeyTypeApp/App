@@ -7,7 +7,9 @@ interface RegisterProps {
   users_url: string | undefined;
 }
 
-const RegisterPage = ({ users_url }: RegisterProps) => {
+const RegisterPage = ({
+  users_url
+}: RegisterProps) => {
   const {
     name,
     pass,

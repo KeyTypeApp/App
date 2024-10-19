@@ -14,6 +14,11 @@
       "id": "0dfd3d36-c923-484e-8b8b-804bd20d5850",
       "name": "user02",
       "pass": "pass02"
+    },
+    {
+      "id": "0b09fc07-17c6-419d-a04d-9e17f92b1d3b",
+      "name": "user03",
+      "pass": "pass03"
     }
   ]
 }
