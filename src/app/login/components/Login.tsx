@@ -2,7 +2,6 @@
 
 import useLogin from "@/hooks/auth/useLogin";
 import LoginForm from "./LoginForm";
-import UserInfo from "./UserInfo";
 
 interface LoginProps {
   users_url: string | undefined;
@@ -12,7 +11,6 @@ const LoginPage = ({ users_url }: LoginProps) => {
   const {
     name,
     pass,
-    userInfo,
     errorMessage,
     setName,
     setPass,
@@ -31,7 +29,6 @@ const LoginPage = ({ users_url }: LoginProps) => {
         />
         {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
       </div>
-      {userInfo && <UserInfo id={userInfo.id} name={userInfo.name} pass={userInfo.pass} />}
     </>
   );
 };

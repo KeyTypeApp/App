@@ -6,9 +6,12 @@ interface NavigateProps {
   text: string;
 }
 
-const Navigate = ({ message, path, text }: NavigateProps) => {
+const Navigate = ({
+  message,
+  path,
+  text 
+}: NavigateProps) => {
   const router = useRouter();
-
   const handleClick = () => {
     router.push(path);
   };

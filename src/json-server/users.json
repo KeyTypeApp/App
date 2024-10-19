@@ -11,19 +11,9 @@
       "pass": "pass01"
     },
     {
-      "id": "5a9055dc-abbf-40f9-b881-68560e83ec55",
+      "id": "0dfd3d36-c923-484e-8b8b-804bd20d5850",
       "name": "user02",
       "pass": "pass02"
-    },
-    {
-      "id": "f6a77264-ecf8-475d-a7cd-9874af829e61",
-      "name": "user03",
-      "pass": "pass03"
-    },
-    {
-      "id": "9153b690-f572-4df0-8f0c-78f5f8c75516",
-      "name": "user04",
-      "pass": "pass04"
     }
   ]
 }

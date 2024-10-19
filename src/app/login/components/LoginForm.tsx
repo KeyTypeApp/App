@@ -2,14 +2,20 @@ import { FormEvent } from "react";
 import Navigate from "@/components/Navigate";
 
 interface LoginFormProps {
-    name: string;
-    pass: string;
-    onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    onChangePass: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    onSubmitForm: (e: FormEvent) => void;
+  name: string;
+  pass: string;
+  onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangePass: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmitForm: (e: FormEvent) => void;
 }
 
-const LoginForm = ({name, pass, onChangeName, onChangePass, onSubmitForm}: LoginFormProps) => {
+const LoginForm = ({
+  name,
+  pass,
+  onChangeName,
+  onChangePass,
+  onSubmitForm
+}: LoginFormProps) => {
   return (
     <form onSubmit={onSubmitForm} className="bg-white shadow-lg rounded-lg p-10 max-w-xs mx-auto mt-12 border border-gray-300">
       <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">LOGIN</h1>
