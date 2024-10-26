@@ -9,7 +9,7 @@ interface RegisterFormProps {
   onSubmitForm: (e: FormEvent) => void;
 }
 
-const RegisterForm = ({
+const RegisterFormComponent = ({
   name,
   pass,
   onChangeName,
@@ -18,7 +18,9 @@ const RegisterForm = ({
 }: RegisterFormProps) => {
   return (
     <form onSubmit={onSubmitForm} className="bg-white shadow-lg rounded-lg p-10 max-w-xs mx-auto mt-12 border border-gray-300">
-      <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">REGISTER</h1>
+      <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
+        REGISTER
+      </h1>
       <div className="mb-6">
         <input
           type="text"
@@ -54,4 +56,4 @@ const RegisterForm = ({
   );
 };
 
-export default RegisterForm
+export default RegisterFormComponent;

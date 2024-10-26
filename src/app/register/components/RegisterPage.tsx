@@ -1,15 +1,15 @@
 "use client"
 
 import useRegister from "@/hooks/auth/useRegister";
-import RegisterForm from "./RegisterForm";
+import RegisterFormComponent from "./RegisterForm";
 
-interface RegisterProps {
+interface RegisterPageProps {
   users_url: string | undefined;
 }
 
-const RegisterPage = ({
+const RegisterPageComponent = ({
   users_url
-}: RegisterProps) => {
+}: RegisterPageProps) => {
   const {
     name,
     pass,
@@ -22,7 +22,7 @@ const RegisterPage = ({
 
   return (
     <div>
-      <RegisterForm
+      <RegisterFormComponent
         name={name}
         pass={pass}
         onChangeName={(e) => setName(e.target.value)}
@@ -35,4 +35,4 @@ const RegisterPage = ({
   );
 };
 
-export default RegisterPage;
+export default RegisterPageComponent;

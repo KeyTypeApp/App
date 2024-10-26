@@ -1,10 +1,10 @@
 import { dbConfig } from "@/services/db/dbConfig";
-import LoginPage from "./components/Login";
+import LoginPageComponent from "./components/LoginPage";
 
 export default function Login() {
   return (
     <main>
-      <LoginPage users_url={dbConfig.users_url} />
+      <LoginPageComponent users_url={dbConfig.users_url} />
     </main>
   );
 };

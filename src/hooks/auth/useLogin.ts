@@ -1,8 +1,10 @@
 import { FormEvent, useState } from "react";
+import { useUser } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
 import { processLogin } from "@/usecase/processLogin";
 
 const useLogin = (users_url: string) => {
+  const { setUser } = useUser();
   const [name, setName] = useState<string>("")
   const [pass, setPass] = useState<string>("")
   const [errorMessage, setErrorMessage] = useState<string>("")
@@ -12,9 +14,11 @@ const useLogin = (users_url: string) => {
     e.preventDefault();
     setErrorMessage("");
 
-    const confirm = await processLogin(name, pass, users_url);
-    if (confirm) {
-      router.push("../home/play");
+    const user = await processLogin(name, pass, users_url);
+    if (user) {
+      const { pass, ...userWithoutPass } = user;
+      setUser(userWithoutPass);
+      router.push("../home/");
     } else {
       setErrorMessage("名前またはパスワードが正しくありません。");
     }

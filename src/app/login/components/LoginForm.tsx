@@ -9,7 +9,7 @@ interface LoginFormProps {
   onSubmitForm: (e: FormEvent) => void;
 }
 
-const LoginForm = ({
+const LoginFormComponent = ({
   name,
   pass,
   onChangeName,
@@ -18,7 +18,9 @@ const LoginForm = ({
 }: LoginFormProps) => {
   return (
     <form onSubmit={onSubmitForm} className="bg-white shadow-lg rounded-lg p-10 max-w-xs mx-auto mt-12 border border-gray-300">
-      <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">LOGIN</h1>
+      <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
+        LOGIN
+      </h1>
       <div className="mb-6">
         <input
           type="text"
@@ -54,4 +56,4 @@ const LoginForm = ({
   );
 };
 
-export default LoginForm
+export default LoginFormComponent;
