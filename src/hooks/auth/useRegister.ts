@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { processRegister } from "@/usecase/processRegister";
+import { processRegister } from "@/usecase/auth/processRegister";
 
 const useRegister = (users_url: string) => {
   const [name, setName] = useState<string>("")

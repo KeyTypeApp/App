@@ -11,6 +11,9 @@
     "scores": "json-server --watch src/json-server/scores.json --port 3002"
   },
   "dependencies": {
+    "cookie": "^1.0.1",
+    "crypt-js": "^1.0.4",
+    "crypto-js": "^4.2.0",
     "json-server": "^1.0.0-beta.3",
     "next": "14.2.15",
     "react": "^18",
@@ -18,6 +21,7 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -1,9 +1,9 @@
 "use client";
 
+import usePlay from "@/hooks/play/usePlay";
 import DisplayRandomWordComponent from "./DisplayRandomWord";
 import DisplayScoreComponent from "./DisplayScore";
 import InputFieldComponent from "./InputField";
-import usePlay from "../hooks/usePlay";
 import { words } from "@/domain/words";
 
 const PlayPageComponent = () => {

@@ -1,10 +1,9 @@
 import { FormEvent, useState } from "react";
-import { useUser } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
-import { processLogin } from "@/usecase/processLogin";
+import { processLogin } from "@/usecase/auth/processLogin";
+import { serialize } from "cookie";
 
 const useLogin = (users_url: string) => {
-  const { setUser } = useUser();
   const [name, setName] = useState<string>("")
   const [pass, setPass] = useState<string>("")
   const [errorMessage, setErrorMessage] = useState<string>("")
@@ -16,8 +15,10 @@ const useLogin = (users_url: string) => {
 
     const user = await processLogin(name, pass, users_url);
     if (user) {
-      const { pass, ...userWithoutPass } = user;
-      setUser(userWithoutPass);
+      document.cookie = serialize("user", JSON.stringify(user), {
+        path: "/",
+        maxAge: 60*60*24,
+      });
       router.push("../home/");
     } else {
       setErrorMessage("名前またはパスワードが正しくありません。");

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { getRandomWord } from "../usecase/processGetRandomWord";
+import { getRandomWord } from "@/usecase/play/processGetRandomWord";
 import { words } from "@/domain/words";
 
 const usePlay = () => {
@@ -40,7 +40,7 @@ const usePlay = () => {
         setCorrectTypeCount(correctTypeCount => correctTypeCount+1);
         setScore(score => score+1);
         setValue("");
-        const nextWord = getRandomWord();
+        const nextWord = getRandomWord;
         setRandomWord(nextWord);
       } else {
         setTypeCount(typeCount => typeCount+1);
