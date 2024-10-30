@@ -12,6 +12,8 @@ const PlayPageComponent = () => {
     value,
     score,
     accuracyRate,
+    timeLimit,
+    isFinish,
     inputRef,
     handleInputChange,
     handleKeyDown,

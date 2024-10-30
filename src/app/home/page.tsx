@@ -7,12 +7,17 @@ export default function Home () {
   const [user, setUser] = useState<{ name: string } | null>(null);
 
   useEffect(() => {
-    const cookies = document.cookie.split(';');
-    const userCookie = cookies.find(cookie => cookie.trim().startsWith('user='));
-    if (userCookie) {
-      const userData = JSON.parse(decodeURIComponent(userCookie.split('=')[1]));
-      setUser(userData);
-    }
+    const fetchUser = async () => {
+      try {
+        const response = await fetch('/api/getCookie');
+        const data = await response.json();
+        console.log(data);
+        setUser(data.user);
+      } catch (error) {
+        console.error("Failed to fetch user data:", error);
+      }
+    };
+    fetchUser();
   }, []);
   return (
     <main className="flex flex-col items-center mt-52">

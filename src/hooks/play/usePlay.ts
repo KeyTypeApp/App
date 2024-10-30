@@ -9,29 +9,43 @@ const usePlay = () => {
   const [typeCount, setTypeCount] = useState<number>(0);
   const [correctTypeCount, setCorrectTypeCount] = useState<number>(0);
   const [incorrectTypeCount, setIncorrectTypeCount] = useState<number>(0);
+  const [timeLimit, setTimeLimit] = useState<number>(60);
+  const [isFinish, setIsFinish] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const word = getRandomWord();
-    setRandomWord(word);
-    inputRef.current?.focus();
+    if (timeLimit > 0) {
+      const timer = setInterval(() => setTimeLimit(timeLimit - 1), 1000);
+      return () => clearInterval(timer);
+    } else {
+      setIsFinish(true);
+    }
+  }, [timeLimit]);
 
-    const handleClickOutside = (e: MouseEvent) => {
-      if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
-        inputRef.current?.focus();
-      }
-    };
+  useEffect(() => {
+    if (!isFinish) {
+      const word = getRandomWord();
+      setRandomWord(word);
+      inputRef.current?.focus();
 
-    document.addEventListener("click", handleClickOutside);
+      const handleClickOutside = (e: MouseEvent) => {
+        if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
+          inputRef.current?.focus();
+        }
+      };
 
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+      document.addEventListener("click", handleClickOutside);
+
+      return () => {
+        document.removeEventListener("click", handleClickOutside);
+      };
+    }
+  }, [isFinish]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>
     ) => {
+      if (isFinish) return;
       const correctWord = words[randomWord];
       const inputValue = e.target.value;
 
@@ -40,7 +54,7 @@ const usePlay = () => {
         setCorrectTypeCount(correctTypeCount => correctTypeCount+1);
         setScore(score => score+1);
         setValue("");
-        const nextWord = getRandomWord;
+        const nextWord = getRandomWord();
         setRandomWord(nextWord);
       } else {
         setTypeCount(typeCount => typeCount+1);
@@ -75,6 +89,8 @@ const usePlay = () => {
     value,
     score,
     accuracyRate,
+    timeLimit,
+    isFinish,
     inputRef,
     handleInputChange,
     handleKeyDown,
