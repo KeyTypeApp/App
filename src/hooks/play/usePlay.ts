@@ -3,15 +3,32 @@ import { getRandomWord } from "@/usecase/play/processGetRandomWord";
 import { words } from "@/domain/words";
 
 const usePlay = () => {
+  const [countDown, setCountDown] = useState<number>(3);
+  const [timeLimit, setTimeLimit] = useState<number>(60);
+  const [isFinish, setIsFinish] = useState<boolean>(false);
   const [randomWord, setRandomWord] = useState<string>("");
   const [value, setValue] = useState<string>("");
   const [score, setScore] = useState<number>(0);
   const [typeCount, setTypeCount] = useState<number>(0);
   const [correctTypeCount, setCorrectTypeCount] = useState<number>(0);
   const [incorrectTypeCount, setIncorrectTypeCount] = useState<number>(0);
-  const [timeLimit, setTimeLimit] = useState<number>(60);
-  const [isFinish, setIsFinish] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (countDown > 0) {
+      const timer = setInterval(() => setCountDown(prev => prev - 1), 1000);
+      return () => clearInterval(timer);
+    } else if (countDown === 0) {
+      startGame();
+    }
+  }, [countDown]);
+
+  const startGame = () => {
+    setIsFinish(false);
+    setTimeLimit(60);
+    setRandomWord(getRandomWord());
+    inputRef.current?.focus();
+  };
 
   useEffect(() => {
     if (timeLimit > 0) {
@@ -85,12 +102,13 @@ const usePlay = () => {
   const accuracyRate = typeCount>0 ? (correctTypeCount/typeCount*100) : 0;
   
   return {
+    countDown,
+    timeLimit,
+    isFinish,
     randomWord,
     value,
     score,
     accuracyRate,
-    timeLimit,
-    isFinish,
     inputRef,
     handleInputChange,
     handleKeyDown,

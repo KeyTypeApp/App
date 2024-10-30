@@ -10,11 +10,11 @@ const DisplayRandomWordComponent = ({
   randomWord, value, words
 }: DisplayRandomWordProps) => {
   return (
-    <div>
+    <div className="text-3xl tracking-wide bg-white shadow-lg px-6 py-4 rounded-lg flex flex-col items-center">
       <p className="text-5xl font-extrabold text-indigo-600 tracking-widest">
         {randomWord}
       </p>
-      <div className="text-3xl tracking-wide bg-white shadow-lg px-6 py-4 rounded-lg flex justify-center">
+      <div className="flex">
         {randomWord && words[randomWord] && words[randomWord].split("").map((char, index) => (
           <span
             key={index}
