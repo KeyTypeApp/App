@@ -17,7 +17,7 @@ const RegisterFormComponent = ({
   onSubmitForm
 }: RegisterFormProps) => {
   return (
-    <form onSubmit={onSubmitForm} className="bg-white shadow-lg rounded-lg p-10 max-w-xs mx-auto mt-12 border border-gray-300">
+    <form onSubmit={onSubmitForm} className="bg-white shadow-lg rounded-lg p-10 max-w-xs mx-auto mt-40 border border-gray-300">
       <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
         REGISTER
       </h1>

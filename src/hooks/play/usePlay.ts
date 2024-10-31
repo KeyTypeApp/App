@@ -70,7 +70,7 @@ const usePlay = () => {
         setTypeCount(typeCount => typeCount+1);
         setCorrectTypeCount(correctTypeCount => correctTypeCount+1);
 
-        const accuracyRate = (correctTypeCount / (typeCount || 1)) * 100;
+        const accuracyRate = (correctTypeCount / (typeCount)) * 100;
         const accuracyBonus = accuracyRate / 50; // 正確率 ÷ 50
         const newScore = Math.floor(score + correctWord.length * accuracyBonus);
         setScore(newScore);
