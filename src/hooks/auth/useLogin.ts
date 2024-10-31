@@ -28,7 +28,8 @@ const useLogin = (users_url: string) => {
         setErrorMessage("クッキーの設定に失敗しました。");
       }
     } else {
-      setErrorMessage("名前またはパスワードが正しくありません。");
+      // setErrorMessage("名前またはパスワードが正しくありません。");
+      alert("名前またはパスワードが正しくありません。");
     }
   };
 

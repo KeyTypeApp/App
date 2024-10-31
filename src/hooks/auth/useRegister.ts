@@ -14,9 +14,11 @@ const useRegister = (users_url: string) => {
 
     const confirm = await processRegister(name, pass, users_url);
     if (confirm) {
-      setSuccessMessage("新規登録しました。");
+      // setSuccessMessage("新規登録しました。");
+      alert("新規登録しました。");
     } else {
-      setErrorMessage("その名前はすでに使われています。");
+      // setErrorMessage("その名前はすでに使われています。");
+      alert("その名前はすでに使われています。");
     }
   };
 

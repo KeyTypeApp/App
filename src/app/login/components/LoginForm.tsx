@@ -33,7 +33,7 @@ const LoginFormComponent = ({
       </div>
       <div className="mb-6">
         <input
-          type="text"
+          type="password"
           name="pass"
           placeholder="PASSWORD"
           value={pass}
