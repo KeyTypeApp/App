@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server';
-import CryptoJS from 'crypto-js';
+import { NextRequest, NextResponse } from "next/server";
+import CryptoJS from "crypto-js";
 
 export async function GET(req: NextRequest) {
-  const cookie = req.cookies.get('user');
-  const secretKey = 'mySecretKey';
+  const cookie = req.cookies.get("user");
+  const secretKey = "mySecretKey";
 
   if (cookie) {
     try {
@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
 
       return NextResponse.json({ user: decryptedData });
     } catch (error) {
-      return NextResponse.json({ error: 'Failed to decrypt cookie' }, { status: 400 });
+      return NextResponse.json({ error: "Failed to decrypt cookie" }, { status: 400 });
     }
   } else {
     return NextResponse.json({ user: null });
