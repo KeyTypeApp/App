@@ -1,26 +1,44 @@
 {
   "scores": [
     {
-      "id": "82542f82-5e1e-4a41-8e76-3ff3d89833ce",
-      "scoreID": "2883d736-88fc-4026-b233-10a4f0284672",
-      "score": 385,
-      "correct": 83,
-      "incorrect": 3,
-      "missedAlphabet": [
-        {
-          "alphabet": "s",
-          "counts": 1
-        },
-        {
-          "alphabet": "a",
-          "counts": 1
-        },
-        {
-          "alphabet": "o",
-          "counts": 1
-        }
-      ],
-      "accuracyRate": 96.5
+      "id": "95c0",
+      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
+      "score": 63,
+      "correctTypeCount": 37,
+      "incorrectTypeCount": 4,
+      "accuracyRate": 90.2439024390244
+    },
+    {
+      "id": "5a43",
+      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
+      "score": 0,
+      "correctTypeCount": 0,
+      "incorrectTypeCount": 0,
+      "accuracyRate": 0
+    },
+    {
+      "id": "b3c2",
+      "uuid": "884e0a03-5b21-4aae-8577-129302746602",
+      "score": 471,
+      "correctTypeCount": 256,
+      "incorrectTypeCount": 40,
+      "accuracyRate": 86.48648648648648
+    },
+    {
+      "id": "c153",
+      "uuid": "884e0a03-5b21-4aae-8577-129302746602",
+      "score": 0,
+      "correctTypeCount": 0,
+      "incorrectTypeCount": 0,
+      "accuracyRate": 0
+    },
+    {
+      "id": "213d",
+      "uuid": "884e0a03-5b21-4aae-8577-129302746602",
+      "score": 124,
+      "correctTypeCount": 72,
+      "incorrectTypeCount": 9,
+      "accuracyRate": 88.88888888888889
     }
   ]
 }

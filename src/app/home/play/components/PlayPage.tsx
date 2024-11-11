@@ -15,6 +15,8 @@ const PlayPageComponent = () => {
     randomWord,
     value,
     score,
+    correctTypeCount,
+    incorrectTypeCount,
     accuracyRate,
     inputRef,
     handleInputChange,
@@ -25,6 +27,8 @@ const PlayPageComponent = () => {
       {isFinish? (
         <DisplayResultComponent
           score={score}
+          correctTypeCount={correctTypeCount}
+          incorrectTypeCount={incorrectTypeCount}
           accuracyRate={accuracyRate}
         />
       ) : countDown>0? (

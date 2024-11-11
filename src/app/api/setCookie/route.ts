@@ -3,10 +3,10 @@ import CryptoJS from "crypto-js";
 import { serialize } from "cookie";
 
 export async function POST(req: NextRequest) {
-  const body = await req.json();
+  const {uuid, name} = await req.json();
   const secretKey = "mySecretKey";
   
-  const encryptedUser = CryptoJS.AES.encrypt(JSON.stringify(body), secretKey).toString();
+  const encryptedUser = CryptoJS.AES.encrypt(JSON.stringify({uuid, name}), secretKey).toString();
   
   const cookie = serialize("user", encryptedUser, {
     path: "/",

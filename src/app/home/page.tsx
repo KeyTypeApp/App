@@ -4,16 +4,16 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home () {
-  const [user, setUser] = useState<{ name: string } | null>(null);
+  const [userName, setUserName] = useState<{ name: string } | null>(null);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await fetch("/api/getCookie");
         const data = await response.json();
-        setUser(data.user);
+        setUserName(data.user.name);
       } catch (error) {
-        console.error("Failed to fetch user data:", error);
+        console.error("取得失敗", error);
       }
     };
     fetchUser();
@@ -22,7 +22,7 @@ export default function Home () {
     <main>
       <div className="flex justify-end w-full pt-3 pr-3">
         <span className="inline-block bg-white text-blue-600 text-lg font-bold py-2 px-6 rounded-full shadow-lg border-2 border-blue-500">
-          {user ? `${user.name}さん` : "ゲスト"}
+          {userName ? `${userName}さん` : "ゲスト"}
         </span>
       </div>
       <div className="flex flex-col items-center mt-52">

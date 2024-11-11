@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 interface User {
-    id: string;
+    uuid: string;
     name: string;
     pass: string;
   }
@@ -16,7 +16,7 @@ interface User {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ id: uuidv4(), name, pass }),
+          body: JSON.stringify({ uuid: uuidv4(), name, pass }),
         });
         return true;
       } else {

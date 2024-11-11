@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { getRandomWord } from "@/usecase/play/processGetRandomWord";
 import { words } from "@/domain/words";
+import { saveScore } from "@/usecase/play/processSaveScore";
 
 const usePlay = () => {
   const [countDown, setCountDown] = useState<number>(3);
@@ -40,6 +41,24 @@ const usePlay = () => {
   }, [timeLimit]);
 
   useEffect(() => {
+    if (isFinish) {
+      const fetchUser = async () => {
+        try {
+          const response = await fetch("/api/getCookie");
+          const data = await response.json();
+          const uuid = data.user.uuid;
+          console.log(uuid);
+          saveScore({uuid, score, correctTypeCount, incorrectTypeCount, accuracyRate});
+        } catch (error) {
+          console.error("取得失敗", error);
+        }
+      };
+      fetchUser();
+    }
+  }, [isFinish])
+
+
+  useEffect(() => {
     if (!isFinish) {
       const word = getRandomWord();
       setRandomWord(word);
@@ -71,7 +90,7 @@ const usePlay = () => {
         setCorrectTypeCount(correctTypeCount => correctTypeCount+1);
 
         const accuracyRate = (correctTypeCount / (typeCount)) * 100;
-        const accuracyBonus = accuracyRate / 50; // 正確率 ÷ 50
+        const accuracyBonus = accuracyRate / 50;
         const newScore = Math.floor(score + correctWord.length * accuracyBonus);
         setScore(newScore);
 
@@ -113,6 +132,8 @@ const usePlay = () => {
     randomWord,
     value,
     score,
+    correctTypeCount,
+    incorrectTypeCount,
     accuracyRate,
     inputRef,
     handleInputChange,

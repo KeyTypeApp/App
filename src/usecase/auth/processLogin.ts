@@ -1,5 +1,5 @@
 interface User {
-    id: string;
+    uuid: string;
     name: string;
     pass: string;
   }
