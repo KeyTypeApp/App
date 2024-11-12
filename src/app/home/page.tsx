@@ -1,30 +1,16 @@
 "use client";
 
+import DisplayNameComponent from "@/components/DisplayName";
+import useName from "@/hooks/set/useName";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Home () {
-  const [userName, setUserName] = useState<{ name: string } | null>(null);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await fetch("/api/getCookie");
-        const data = await response.json();
-        setUserName(data.user.name);
-      } catch (error) {
-        console.error("取得失敗", error);
-      }
-    };
-    fetchUser();
-  }, []);
+  const name = useName();
   return (
     <main>
-      <div className="flex justify-end w-full pt-3 pr-3">
-        <span className="inline-block bg-white text-blue-600 text-lg font-bold py-2 px-6 rounded-full shadow-lg border-2 border-blue-500">
-          {userName ? `${userName}さん` : "ゲスト"}
-        </span>
-      </div>
+      <DisplayNameComponent
+        name={name}
+      />
       <div className="flex flex-col items-center mt-52">
         <div className="mb-10">
           <Link href="/home/play">

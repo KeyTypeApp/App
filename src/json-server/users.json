@@ -11,6 +11,12 @@
       "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
       "name": "user01",
       "pass": "pass01"
+    },
+    {
+      "id": "af56",
+      "uuid": "02311e36-078f-479b-bd02-0aec742f7d55",
+      "name": "user02",
+      "pass": "pass02"
     }
   ]
 }
