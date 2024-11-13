@@ -32,12 +32,12 @@ const PlayPageComponent = () => {
           accuracyRate={accuracyRate}
         />
       ) : countDown>0? (
-        <p className="text-5xl font-bold text-gray-700">
+        <p className="text-5xl font-bold text-gray-900">
           {countDown}
         </p>
       ) : (
         <div className="flex flex-col items-center space-y-4">
-          <p className="text-2xl font-semibold text-gray-700">
+          <p className="text-2xl font-semibold text-gray-900">
             残り時間:{timeLimit}秒
           </p>
           <DisplayRandomWordComponent

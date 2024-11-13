@@ -11,21 +11,21 @@ const DisplayResultComponent = ({score, correctTypeCount, incorrectTypeCount, ac
       <p className="text-3xl font-bold text-red-500 mb-4">
         タイムアップ
       </p>
-      <div className="text-2xl text-gray-800 font-semibold">
+      <div className="text-2xl text-gray-900 font-semibold">
         <p className="mb-2">
           スコア:
           <span className="text-indigo-600 font-extrabold">
-            {score}
+            {score}点
           </span>
         </p>
         <p className="mb-2">
-          正解:
+          正タイプ数:
           <span className="text-indigo-600 font-extrabold">
             {correctTypeCount}回
           </span>
         </p>
         <p className="mb-2">
-          不正解:
+          誤タイプ数:
           <span className="text-indigo-600 font-extrabold">
             {incorrectTypeCount}回
           </span>

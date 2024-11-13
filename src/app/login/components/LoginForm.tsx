@@ -18,7 +18,7 @@ const LoginFormComponent = ({
 }: LoginFormProps) => {
   return (
     <form onSubmit={onSubmitForm} className="bg-white shadow-lg rounded-lg p-10 max-w-xs mx-auto mt-40 border border-gray-300">
-      <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
+      <h1 className="text-2xl font-bold text-center mb-6 text-gray-900">
         LOGIN
       </h1>
       <div className="mb-6">
