@@ -3,7 +3,6 @@
 import MenuButtonComponent from "@/components/MenuButton";
 import useGetScores from "@/hooks/scoreboard/useGetScores";
 
-
 interface ScoreBoardPageProps {
   scores_url: string | undefined;
 }
@@ -61,7 +60,7 @@ const ScoreBoardPageComponent = ({
             ))}
           </ul>
         ) : (
-          <p className="text-center text-gray-500 text-lg font-semibold mt-10">
+          <p className="text-center text-gray-500 text-lg font-semibold">
             スコアがありません！
           </p>
         )}
