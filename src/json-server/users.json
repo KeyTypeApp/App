@@ -23,6 +23,12 @@
       "uuid": "260de6fa-5a96-4869-a9cb-ad6d7f0aa308",
       "name": "user03",
       "pass": "pass03"
+    },
+    {
+      "id": "2775",
+      "uuid": "96919626-d04e-43df-84e2-04f249f88cc4",
+      "name": "user04",
+      "pass": "pass04"
     }
   ]
 }
