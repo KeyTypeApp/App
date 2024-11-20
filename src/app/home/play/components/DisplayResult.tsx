@@ -7,38 +7,46 @@ interface DisplayResultProps {
 
 const DisplayResultComponent = ({score, correctTypeCount, incorrectTypeCount, accuracyRate}: DisplayResultProps) => {
   return (
-    <div className="flex flex-col items-center justify-center bg-white rounded-lg shadow-lg p-8 space-y-4">
-      <p className="text-3xl font-bold text-red-500 mb-4">
+    <div className="flex flex-col items-center justify-center bg-gray-100 rounded-lg shadow-lg p-12 space-y-8 max-w-lg mx-auto">
+      <p className="text-3xl font-bold text-red-600">
         タイムアップ
       </p>
-      <div className="text-2xl text-gray-900 font-semibold">
-        <p className="mb-2">
-          スコア:
-          <span className="text-indigo-600 font-extrabold">
+      <div className="space-y-4 w-full">
+        <div className="flex justify-between items-center p-4 bg-white rounded-lg shadow-lg border-l-4 border-blue-600">
+          <span className="text-lg text-gray-600">
+            スコア:
+          </span>
+          <span className="text-xl text-gray-800 font-bold">
             {score}点
           </span>
-        </p>
-        <p className="mb-2">
-          正タイプ数:
-          <span className="text-indigo-600 font-extrabold">
+        </div>
+        <div className="flex justify-between items-center p-4 bg-white rounded-lg shadow-lg border-l-4 border-blue-600">
+          <span className="text-lg text-gray-600">
+            正タイプ数:
+          </span>
+          <span className="text-xl text-gray-800 font-bold">
             {correctTypeCount}回
           </span>
-        </p>
-        <p className="mb-2">
-          誤タイプ数:
-          <span className="text-indigo-600 font-extrabold">
+        </div>
+        <div className="flex justify-between items-center p-4 bg-white rounded-lg shadow-lg border-l-4 border-blue-600">
+          <span className="text-lg text-gray-600">
+            誤タイプ数:
+          </span>
+          <span className="text-xl text-gray-800 font-bold">
             {incorrectTypeCount}回
           </span>
-        </p>
-        <p className="mb-2">
-          正確率:
-          <span className="text-indigo-600 font-extrabold">
+        </div>
+        <div className="flex justify-between items-center p-4 bg-white rounded-lg shadow-lg border-l-4 border-blue-600">
+          <span className="text-lg text-gray-600">
+            正確率:
+          </span>
+          <span className="text-xl text-gray-800 font-bold">
             {accuracyRate.toFixed(1)}%
           </span>
-        </p>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default DisplayResultComponent;
