@@ -9,8 +9,8 @@ interface NavigateProps {
 }
 
 const Navigate = ({
-  message,
   path,
+  message,
   text 
 }: NavigateProps) => {
   const router = useRouter();
