@@ -15,10 +15,5 @@ const config: Config = {
     },
   },
   plugins: [],
-  safelist: [
-    'bg-blue-500',
-    'bg-red-500',
-    'bg-yellow-500',
-  ],
 };
 export default config;

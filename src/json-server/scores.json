@@ -39,6 +39,14 @@
       "correctTypeCount": 317,
       "incorrectTypeCount": 16,
       "accuracyRate": 95.1951951951952
+    },
+    {
+      "id": "89ba",
+      "uuid": "b37bc9d6-5b0b-4c4d-a401-7e9a519f8123",
+      "score": 681,
+      "correctTypeCount": 380,
+      "incorrectTypeCount": 32,
+      "accuracyRate": 92.23300970873787
     }
   ]
 }
