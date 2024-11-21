@@ -10,7 +10,7 @@ interface DisplayResultProps {
 const DisplayResultComponent = ({score, correctTypeCount, incorrectTypeCount, accuracyRate}: DisplayResultProps) => {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center bg-gray-100 rounded-lg shadow-lg p-12 space-y-8 max-w-lg mx-auto">
+      <div className="flex flex-col items-center justify-center bg-gray-100 rounded-lg shadow-lg p-12 space-y-8 w-80 mx-auto">
         <p className="text-3xl font-bold text-red-600">
           タイムアップ
         </p>

@@ -26,7 +26,7 @@ const usePlay = () => {
 
   const startGame = () => {
     setIsFinish(false);
-    setTimeLimit(60);
+    setTimeLimit(20);
     setRandomWord(getRandomWord());
     inputRef.current?.focus();
   };
