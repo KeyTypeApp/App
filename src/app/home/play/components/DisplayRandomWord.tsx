@@ -7,7 +7,9 @@ interface DisplayRandomWordProps {
 }
 
 const DisplayRandomWordComponent = ({
-  randomWord, value, words
+  randomWord,
+  value,
+  words
 }: DisplayRandomWordProps) => {
   return (
     <div className="text-3xl tracking-wide bg-white shadow-lg px-6 py-4 rounded-lg flex flex-col items-center">

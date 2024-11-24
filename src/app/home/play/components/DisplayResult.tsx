@@ -7,7 +7,12 @@ interface DisplayResultProps {
   accuracyRate: number;
 }
 
-const DisplayResultComponent = ({score, correctTypeCount, incorrectTypeCount, accuracyRate}: DisplayResultProps) => {
+const DisplayResultComponent = ({
+  score,
+  correctTypeCount,
+  incorrectTypeCount,
+  accuracyRate
+}: DisplayResultProps) => {
   return (
     <div>
       <div className="flex flex-col items-center justify-center bg-gray-100 rounded-lg shadow-lg p-12 space-y-8 w-80 mx-auto">
