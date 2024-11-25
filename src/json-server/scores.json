@@ -25,14 +25,6 @@
       "accuracyRate": 95.51020408163265
     },
     {
-      "id": "900d",
-      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 0,
-      "correctTypeCount": 0,
-      "incorrectTypeCount": 0,
-      "accuracyRate": 0
-    },
-    {
       "id": "937f",
       "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
       "score": 601,
@@ -71,6 +63,14 @@
       "correctTypeCount": 311,
       "incorrectTypeCount": 46,
       "accuracyRate": 86.87150837988827
+    },
+    {
+      "id": "92fb",
+      "uuid": "260de6fa-5a96-4869-a9cb-ad6d7f0aa308",
+      "score": 34,
+      "correctTypeCount": 17,
+      "incorrectTypeCount": 0,
+      "accuracyRate": 100
     }
   ]
 }

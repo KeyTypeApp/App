@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import CryptoJS from "crypto-js";
 import { serialize } from "cookie";
+import { Key } from "@/lib/secretKey";
 
 export async function POST(req: NextRequest) {
   const {uuid, name} = await req.json();
-  const secretKey = "mySecretKey";
+  const secret_key = Key.secret_key;
   
-  const encryptedUser = CryptoJS.AES.encrypt(JSON.stringify({uuid, name}), secretKey).toString();
+  const encryptedUser = CryptoJS.AES.encrypt(JSON.stringify({uuid, name}), secret_key).toString();
   
   const cookie = serialize("user", encryptedUser, {
     path: "/",
