@@ -14,23 +14,27 @@ const useLogin = (users_url: string) => {
     e.preventDefault();
     setErrorMessage("");
 
-    const user = await processLogin(name, pass, users_url);
-    if (user) {
-      const res = await fetch('/api/setCookie', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
-      });
+    if (name && pass) {
+      const user = await processLogin(name, pass, users_url);
+      if (user) {
+        const res = await fetch('/api/setCookie', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(user),
+        });
 
-      if (res.ok) {
-        router.push("../home/");
+        if (res.ok) {
+          router.push("../home/");
+        } else {
+          setErrorMessage("クッキーの設定に失敗しました。");
+        }
       } else {
-        setErrorMessage("クッキーの設定に失敗しました。");
+        alert("名前またはパスワードが正しくありません。");
       }
     } else {
-      alert("名前またはパスワードが正しくありません。");
+      alert("未入力の欄があります。");
     }
   };
 

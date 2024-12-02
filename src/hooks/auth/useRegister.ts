@@ -14,12 +14,16 @@ const useRegister = (users_url: string) => {
     setSuccessMessage("");
     setErrorMessage("");
 
-    const confirm = await processRegister(name, pass, users_url);
-    if (confirm) {
-      router.push("/login");
-      alert("新規登録しました。");
+    if (name && pass) {
+      const confirm = await processRegister(name, pass, users_url);
+      if (confirm) {
+        router.push("/login");
+        alert("新規登録しました。");
+      } else {
+        alert("その名前はすでに使われています。");
+      }
     } else {
-      alert("その名前はすでに使われています。");
+      alert("未入力の欄があります。");
     }
   };
 

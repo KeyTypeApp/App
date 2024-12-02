@@ -24,7 +24,7 @@ const ScoreBoardPageComponent = ({
               <li key={index} className="border border-gray-200 rounded-lg p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="flex justify-between items-center mb-4">
                   <p className="text-lg font-semibold text-gray-900">
-                    スコア: 
+                    スコア:
                     <span className="text-blue-600">
                       {score.score}点
                     </span>
