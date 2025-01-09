@@ -10,7 +10,6 @@ const ScoreListComponent = ({
   scores_url
 }: ScoreListProps) => {
   const scores = useGetScores(scores_url);
-
   return (
     <div>
     {scores.length > 0 ? (
