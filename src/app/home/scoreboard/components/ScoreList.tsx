@@ -46,7 +46,7 @@ const ScoreListComponent = ({
                   正確率
                 </p>
                 <p className="text-xl font-bold text-gray-900">
-                  {score.accuracyRate.toFixed(1)}%
+                  {score.accuracyRate}%
                 </p>
               </div>
             </div>

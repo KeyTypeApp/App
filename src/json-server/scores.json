@@ -6,127 +6,63 @@
       "score": 594,
       "correctTypeCount": 335,
       "incorrectTypeCount": 22,
-      "accuracyRate": 93.8375350140056
+      "accuracyRate": 93
     },
     {
-      "id": "4db1",
+      "id": "1a64",
       "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 507,
-      "correctTypeCount": 284,
-      "incorrectTypeCount": 35,
-      "accuracyRate": 89.0282131661442
+      "score": 579,
+      "correctTypeCount": 315,
+      "incorrectTypeCount": 17,
+      "accuracyRate": 95
     },
     {
-      "id": "ba1b",
-      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 449,
-      "correctTypeCount": 234,
-      "incorrectTypeCount": 11,
-      "accuracyRate": 95.51020408163265
+      "id": "8dee",
+      "uuid": "260de6fa-5a96-4869-a9cb-ad6d7f0aa308",
+      "score": 562,
+      "correctTypeCount": 295,
+      "incorrectTypeCount": 13,
+      "accuracyRate": 96
     },
     {
-      "id": "937f",
-      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 601,
-      "correctTypeCount": 317,
-      "incorrectTypeCount": 16,
-      "accuracyRate": 95.1951951951952
+      "id": "d2ba",
+      "uuid": "260de6fa-5a96-4869-a9cb-ad6d7f0aa308",
+      "score": 433,
+      "correctTypeCount": 267,
+      "incorrectTypeCount": 34,
+      "accuracyRate": 88
     },
     {
-      "id": "89ba",
+      "id": "3c0a",
       "uuid": "b37bc9d6-5b0b-4c4d-a401-7e9a519f8123",
-      "score": 681,
-      "correctTypeCount": 380,
-      "incorrectTypeCount": 32,
-      "accuracyRate": 92.23300970873787
+      "score": 552,
+      "correctTypeCount": 303,
+      "incorrectTypeCount": 27,
+      "accuracyRate": 92
     },
     {
-      "id": "ed18",
+      "id": "da76",
+      "uuid": "b37bc9d6-5b0b-4c4d-a401-7e9a519f8123",
+      "score": 54,
+      "correctTypeCount": 32,
+      "incorrectTypeCount": 3,
+      "accuracyRate": 91
+    },
+    {
+      "id": "5c8a",
       "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 139,
-      "correctTypeCount": 89,
-      "incorrectTypeCount": 7,
-      "accuracyRate": 92.70833333333334
-    },
-    {
-      "id": "4a16",
-      "uuid": "260de6fa-5a96-4869-a9cb-ad6d7f0aa308",
-      "score": 606,
-      "correctTypeCount": 353,
-      "incorrectTypeCount": 91,
-      "accuracyRate": 79.5045045045045
-    },
-    {
-      "id": "dcba",
-      "uuid": "884e0a03-5b21-4aae-8577-129302746602",
-      "score": 534,
-      "correctTypeCount": 311,
-      "incorrectTypeCount": 46,
-      "accuracyRate": 86.87150837988827
-    },
-    {
-      "id": "92fb",
-      "uuid": "260de6fa-5a96-4869-a9cb-ad6d7f0aa308",
-      "score": 34,
-      "correctTypeCount": 17,
+      "score": 0,
+      "correctTypeCount": 0,
       "incorrectTypeCount": 0,
-      "accuracyRate": 100
+      "accuracyRate": 0
     },
     {
-      "id": "9fe3",
+      "id": "fb11",
       "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 523,
-      "correctTypeCount": 312,
-      "incorrectTypeCount": 49,
-      "accuracyRate": 86.1878453038674
-    },
-    {
-      "id": "41d7",
-      "uuid": "86fce010-8af1-4b77-a70b-2a245762c37f",
-      "score": 126,
-      "correctTypeCount": 63,
+      "score": 0,
+      "correctTypeCount": 0,
       "incorrectTypeCount": 0,
-      "accuracyRate": 100
-    },
-    {
-      "id": "c550",
-      "uuid": "96919626-d04e-43df-84e2-04f249f88cc4",
-      "score": 74,
-      "correctTypeCount": 62,
-      "incorrectTypeCount": 1,
-      "accuracyRate": 98.4126984126984
-    },
-    {
-      "id": "87d6",
-      "uuid": "b37bc9d6-5b0b-4c4d-a401-7e9a519f8123",
-      "score": 87,
-      "correctTypeCount": 46,
-      "incorrectTypeCount": 1,
-      "accuracyRate": 97.87234042553192
-    },
-    {
-      "id": "f9dd",
-      "uuid": "b37bc9d6-5b0b-4c4d-a401-7e9a519f8123",
-      "score": 48,
-      "correctTypeCount": 36,
-      "incorrectTypeCount": 8,
-      "accuracyRate": 78.26086956521739
-    },
-    {
-      "id": "c89f",
-      "uuid": "93a90fc8-3ed6-4c6a-86dc-528eb978702b",
-      "score": 48,
-      "correctTypeCount": 31,
-      "incorrectTypeCount": 1,
-      "accuracyRate": 96.875
-    },
-    {
-      "id": "be73",
-      "uuid": "260de6fa-5a96-4869-a9cb-ad6d7f0aa308",
-      "score": 374,
-      "correctTypeCount": 196,
-      "incorrectTypeCount": 11,
-      "accuracyRate": 94.68599033816425
+      "accuracyRate": 0
     }
   ]
 }

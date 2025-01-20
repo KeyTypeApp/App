@@ -123,7 +123,7 @@ const usePlay = () => {
     }
   };
 
-  const accuracyRate = typeCount>0 ? (correctTypeCount/typeCount*100) : 0;
+  const accuracyRate = typeCount>0 ? Math.round((correctTypeCount/typeCount*100)) : 0;
   
   return {
     countDown,

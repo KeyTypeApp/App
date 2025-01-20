@@ -22,7 +22,7 @@ const DisplayScoreComponent = ({
           正確率
         </p>
         <p className="text-xl mt-1">
-          {accuracyRate.toFixed(1)}%
+          {accuracyRate}%
         </p>
       </div>
     </div>

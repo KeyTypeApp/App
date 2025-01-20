@@ -49,7 +49,7 @@ const DisplayResultComponent = ({
               正確率:
             </span>
             <span className="text-xl text-gray-800 font-bold">
-              {accuracyRate.toFixed(1)}%
+              {accuracyRate}%
             </span>
           </div>
         </div>
