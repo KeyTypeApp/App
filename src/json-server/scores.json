@@ -63,6 +63,22 @@
       "correctTypeCount": 0,
       "incorrectTypeCount": 0,
       "accuracyRate": 0
+    },
+    {
+      "id": "3c25",
+      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
+      "score": 0,
+      "correctTypeCount": 0,
+      "incorrectTypeCount": 0,
+      "accuracyRate": 0
+    },
+    {
+      "id": "2cee",
+      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
+      "score": 0,
+      "correctTypeCount": 0,
+      "incorrectTypeCount": 0,
+      "accuracyRate": 0
     }
   ]
 }

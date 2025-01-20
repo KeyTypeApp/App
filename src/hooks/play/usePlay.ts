@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { getRandomWord } from "@/usecase/play/processGetRandomWord";
 import { words } from "@/domain/words";
@@ -16,12 +18,18 @@ const usePlay = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (countDown > 0) {
-      const timer = setInterval(() => setCountDown(prev => prev - 1), 1000);
-      return () => clearInterval(timer);
-    } else if (countDown === 0) {
-      startGame();
-    }
+    const countdownFunction = (currentCount: number) => {
+      if (currentCount > 0) {
+        setCountDown(currentCount);
+        setTimeout(() => countdownFunction(currentCount - 1), 1000);
+      } else {
+        startGame();
+      }
+    };
+
+    countdownFunction(countDown); // カウントダウンを開始
+
+    return () => {};
   }, [countDown]);
 
   const startGame = () => {
@@ -33,7 +41,7 @@ const usePlay = () => {
 
   useEffect(() => {
     if (timeLimit > 0) {
-      const timer = setInterval(() => setTimeLimit(timeLimit - 1), 1000);
+      const timer = setInterval(() => setTimeLimit((prev) => prev - 1), 1000);
       return () => clearInterval(timer);
     } else {
       setIsFinish(true);
@@ -48,15 +56,14 @@ const usePlay = () => {
           const data = await response.json();
           const uuid = data.user.uuid;
           console.log(uuid);
-          saveScore({uuid, score, correctTypeCount, incorrectTypeCount, accuracyRate});
+          saveScore({ uuid, score, correctTypeCount, incorrectTypeCount, accuracyRate });
         } catch (error) {
           console.error("取得失敗", error);
         }
       };
       fetchUser();
     }
-  }, [isFinish])
-
+  }, [isFinish]);
 
   useEffect(() => {
     if (!isFinish) {
@@ -80,41 +87,41 @@ const usePlay = () => {
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>
-    ) => {
-      if (isFinish) return;
-      const correctWord = words[randomWord];
-      const inputValue = e.target.value;
+  ) => {
+    if (isFinish) return;
+    const correctWord = words[randomWord];
+    const inputValue = e.target.value;
 
-      if (inputValue === correctWord) {
-        setTypeCount(typeCount => typeCount+1);
-        setCorrectTypeCount(correctTypeCount => correctTypeCount+1);
+    if (inputValue === correctWord) {
+      setTypeCount((typeCount) => typeCount + 1);
+      setCorrectTypeCount((correctTypeCount) => correctTypeCount + 1);
 
-        const accuracyRate = (correctTypeCount / (typeCount)) * 100;
-        const accuracyBonus = accuracyRate / 50;
-        const newScore = Math.floor(score + correctWord.length * accuracyBonus);
-        setScore(newScore);
+      const accuracyRate = (correctTypeCount / typeCount) * 100;
+      const accuracyBonus = accuracyRate / 50;
+      const newScore = Math.floor(score + correctWord.length * accuracyBonus);
+      setScore(newScore);
 
-        setValue("");
-        const nextWord = getRandomWord();
-        setRandomWord(nextWord);
-      } else {
-        setTypeCount(typeCount => typeCount+1);
-        let correctValue = "";
-        const valueLength = inputValue.length;
+      setValue("");
+      const nextWord = getRandomWord();
+      setRandomWord(nextWord);
+    } else {
+      setTypeCount((typeCount) => typeCount + 1);
+      let correctValue = "";
+      const valueLength = inputValue.length;
 
-        if (valueLength>0 && valueLength <= correctWord.length) {
-          const currentChar = correctWord[valueLength-1];
-          if (inputValue[valueLength-1] === currentChar) {
-            setCorrectTypeCount(correctTypeCount => correctTypeCount+1);
-            correctValue = inputValue;
-          } else {
-            correctValue = inputValue.slice(0, -1);
-            setIncorrectTypeCount(incorrectTypeCount => incorrectTypeCount+1);
-          };
-        };
+      if (valueLength > 0 && valueLength <= correctWord.length) {
+        const currentChar = correctWord[valueLength - 1];
+        if (inputValue[valueLength - 1] === currentChar) {
+          setCorrectTypeCount((correctTypeCount) => correctTypeCount + 1);
+          correctValue = inputValue;
+        } else {
+          correctValue = inputValue.slice(0, -1);
+          setIncorrectTypeCount((incorrectTypeCount) => incorrectTypeCount + 1);
+        }
+      }
 
-        setValue(correctValue);
-      };
+      setValue(correctValue);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -123,8 +130,8 @@ const usePlay = () => {
     }
   };
 
-  const accuracyRate = typeCount>0 ? Math.round((correctTypeCount/typeCount*100)) : 0;
-  
+  const accuracyRate = typeCount > 0 ? Math.round((correctTypeCount / typeCount) * 100) : 0;
+
   return {
     countDown,
     timeLimit,
