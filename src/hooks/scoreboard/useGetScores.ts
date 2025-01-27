@@ -8,6 +8,7 @@ interface ScoresProps {
   correctTypeCount: number;
   incorrectTypeCount: number;
   accuracyRate: number;
+  incorrectChars: { [key: string]: number };
 }
 
 const useGetScores = (scores_url: string | undefined) => {

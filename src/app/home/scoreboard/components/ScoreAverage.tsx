@@ -14,7 +14,7 @@ const ScoreAverageComponent = ({ scores_url }: ScoreAverageProps) => {
   const calculateAverageScore = () => {
     if (playCount === 0) return null;
     const totalScore = scores.reduce((sum, score) => sum + score.score, 0);
-    return totalScore / scores.length;
+    return Math.round(totalScore / scores.length);
   };
 
   const averageScore = calculateAverageScore();

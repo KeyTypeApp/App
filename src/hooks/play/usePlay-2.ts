@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { getRandomWord } from "@/usecase/play/processGetRandomWord";
 import { words } from "@/domain/words";
@@ -16,12 +18,18 @@ const usePlay = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (countDown > 0) {
-      const timer = setInterval(() => setCountDown(prev => prev - 1), 1000);
-      return () => clearInterval(timer);
-    } else if (countDown === 0) {
-      startGame();
-    }
+    const countdownFunction = (currentCount: number) => {
+      if (currentCount > 0) {
+        setCountDown(currentCount);
+        setTimeout(() => countdownFunction(currentCount - 1), 1000);
+      } else {
+        startGame();
+      }
+    };
+
+    countdownFunction(countDown);
+
+    return () => {};
   }, [countDown]);
 
   const startGame = () => {
@@ -33,7 +41,7 @@ const usePlay = () => {
 
   useEffect(() => {
     if (timeLimit > 0) {
-      const timer = setInterval(() => setTimeLimit(timeLimit - 1), 1000);
+      const timer = setInterval(() => setTimeLimit((prev) => prev - 1), 1000);
       return () => clearInterval(timer);
     } else {
       setIsFinish(true);
@@ -82,12 +90,7 @@ const usePlay = () => {
   ) => {
     if (isFinish) return;
     const correctWord = words[randomWord];
-    let inputValue = e.target.value;
-
-    // 全角文字を半角に変換
-    inputValue = inputValue.replace(/[Ａ-Ｚａ-ｚ０-９！-～]/g, (match) =>
-      String.fromCharCode(match.charCodeAt(0) - 0xFEE0)
-    );
+    const inputValue = e.target.value;
 
     if (inputValue === correctWord) {
       setTypeCount((typeCount) => typeCount + 1);

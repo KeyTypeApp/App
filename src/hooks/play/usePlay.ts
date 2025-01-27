@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 import { getRandomWord } from "@/usecase/play/processGetRandomWord";
 import { words } from "@/domain/words";
@@ -15,21 +13,16 @@ const usePlay = () => {
   const [typeCount, setTypeCount] = useState<number>(0);
   const [correctTypeCount, setCorrectTypeCount] = useState<number>(0);
   const [incorrectTypeCount, setIncorrectTypeCount] = useState<number>(0);
+  const [incorrectChars, setIncorrectChars] = useState<{ [key: string]: number }>({});
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const countdownFunction = (currentCount: number) => {
-      if (currentCount > 0) {
-        setCountDown(currentCount);
-        setTimeout(() => countdownFunction(currentCount - 1), 1000);
-      } else {
-        startGame();
-      }
-    };
-
-    countdownFunction(countDown); // カウントダウンを開始
-
-    return () => {};
+    if (countDown > 0) {
+      const timer = setInterval(() => setCountDown(prev => prev - 1), 1000);
+      return () => clearInterval(timer);
+    } else if (countDown === 0) {
+      startGame();
+    }
   }, [countDown]);
 
   const startGame = () => {
@@ -41,7 +34,7 @@ const usePlay = () => {
 
   useEffect(() => {
     if (timeLimit > 0) {
-      const timer = setInterval(() => setTimeLimit((prev) => prev - 1), 1000);
+      const timer = setInterval(() => setTimeLimit(timeLimit - 1), 1000);
       return () => clearInterval(timer);
     } else {
       setIsFinish(true);
@@ -56,7 +49,14 @@ const usePlay = () => {
           const data = await response.json();
           const uuid = data.user.uuid;
           console.log(uuid);
-          saveScore({ uuid, score, correctTypeCount, incorrectTypeCount, accuracyRate });
+          saveScore({
+            uuid,
+            score,
+            correctTypeCount,
+            incorrectTypeCount,
+            accuracyRate,
+            incorrectChars,
+          });
         } catch (error) {
           console.error("取得失敗", error);
         }
@@ -65,32 +65,16 @@ const usePlay = () => {
     }
   }, [isFinish]);
 
-  useEffect(() => {
-    if (!isFinish) {
-      const word = getRandomWord();
-      setRandomWord(word);
-      inputRef.current?.focus();
-
-      const handleClickOutside = (e: MouseEvent) => {
-        if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
-          inputRef.current?.focus();
-        }
-      };
-
-      document.addEventListener("click", handleClickOutside);
-
-      return () => {
-        document.removeEventListener("click", handleClickOutside);
-      };
-    }
-  }, [isFinish]);
-
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     if (isFinish) return;
     const correctWord = words[randomWord];
-    const inputValue = e.target.value;
+    let inputValue = e.target.value;
+
+    inputValue = inputValue.replace(/[Ａ-Ｚａ-ｚ０-９！-～]/g, (match) =>
+      String.fromCharCode(match.charCodeAt(0) - 0xFEE0)
+    );
 
     if (inputValue === correctWord) {
       setTypeCount((typeCount) => typeCount + 1);
@@ -117,6 +101,11 @@ const usePlay = () => {
         } else {
           correctValue = inputValue.slice(0, -1);
           setIncorrectTypeCount((incorrectTypeCount) => incorrectTypeCount + 1);
+          setIncorrectChars((prev) => {
+            const updated = { ...prev };
+            updated[inputValue[valueLength - 1]] = (updated[inputValue[valueLength - 1]] || 0) + 1;
+            return updated;
+          });
         }
       }
 
@@ -142,6 +131,7 @@ const usePlay = () => {
     correctTypeCount,
     incorrectTypeCount,
     accuracyRate,
+    incorrectChars,
     inputRef,
     handleInputChange,
     handleKeyDown,

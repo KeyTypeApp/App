@@ -1,60 +1,79 @@
 {
   "scores": [
     {
-      "id": "752e",
-      "uuid": "b37bc9d6-5b0b-4c4d-a401-7e9a519f8123",
-      "score": 594,
-      "correctTypeCount": 335,
-      "incorrectTypeCount": 22,
-      "accuracyRate": 93
-    },
-    {
-      "id": "1a64",
+      "id": "7143",
       "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 579,
-      "correctTypeCount": 315,
-      "incorrectTypeCount": 17,
-      "accuracyRate": 95
-    },
-    {
-      "id": "8dee",
-      "uuid": "260de6fa-5a96-4869-a9cb-ad6d7f0aa308",
-      "score": 562,
-      "correctTypeCount": 295,
-      "incorrectTypeCount": 13,
-      "accuracyRate": 96
-    },
-    {
-      "id": "d2ba",
-      "uuid": "260de6fa-5a96-4869-a9cb-ad6d7f0aa308",
-      "score": 433,
-      "correctTypeCount": 267,
-      "incorrectTypeCount": 34,
-      "accuracyRate": 88
-    },
-    {
-      "id": "3c0a",
-      "uuid": "b37bc9d6-5b0b-4c4d-a401-7e9a519f8123",
-      "score": 552,
+      "score": 531,
       "correctTypeCount": 303,
-      "incorrectTypeCount": 27,
-      "accuracyRate": 92
+      "incorrectTypeCount": 35,
+      "accuracyRate": 90,
+      "incorrectChars": {
+        "0": 2,
+        "k": 3,
+        "u": 3,
+        "r": 4,
+        "a": 3,
+        "n": 2,
+        "b": 1,
+        "o": 5,
+        "t": 1,
+        "s": 2,
+        "y": 1,
+        "g": 2,
+        "i": 2,
+        "h": 1,
+        "p": 2,
+        "m": 1
+      }
     },
     {
-      "id": "da76",
-      "uuid": "b37bc9d6-5b0b-4c4d-a401-7e9a519f8123",
-      "score": 54,
-      "correctTypeCount": 32,
-      "incorrectTypeCount": 3,
-      "accuracyRate": 91
-    },
-    {
-      "id": "9a10",
+      "id": "59c8",
       "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 0,
-      "correctTypeCount": 0,
-      "incorrectTypeCount": 0,
-      "accuracyRate": 0
+      "score": 586,
+      "correctTypeCount": 328,
+      "incorrectTypeCount": 21,
+      "accuracyRate": 94,
+      "incorrectChars": {
+        "k": 2,
+        "a": 2,
+        "m": 1,
+        "h": 1,
+        "r": 2,
+        "e": 3,
+        "s": 1,
+        "w": 2,
+        "g": 1,
+        "o": 1,
+        "n": 1,
+        "j": 1,
+        "u": 1,
+        "-": 1,
+        "i": 1
+      }
+    },
+    {
+      "id": "5b55",
+      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
+      "score": 506,
+      "correctTypeCount": 310,
+      "incorrectTypeCount": 31,
+      "accuracyRate": 91,
+      "incorrectChars": {
+        "0": 1,
+        "i": 5,
+        "z": 2,
+        "s": 2,
+        "e": 3,
+        "n": 4,
+        "w": 2,
+        "m": 1,
+        "o": 2,
+        "r": 3,
+        "a": 2,
+        "-": 1,
+        "u": 2,
+        "p": 1
+      }
     }
   ]
 }
