@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from "react";
 
+interface UserProps {
+  uuid: string;
+  name: string;
+}
+
 interface ScoresProps {
   uuid: string;
   score: number;
@@ -41,11 +46,11 @@ const useGetHighestScores = (
         }
     
         const userHighestScores = users
-          .map((user) => {
-            const userScores = scores.filter((score) => score.uuid === user.uuid);
+          .map((user:UserProps) => {
+            const userScores = scores.filter((score:ScoresProps) => score.uuid === user.uuid);
             if (userScores.length === 0) return null;
     
-            const highestScore = userScores.reduce((max, current) =>
+            const highestScore = userScores.reduce((max:ScoresProps, current:ScoresProps) =>
               current.score > max.score ? current : max
             );
     
@@ -56,7 +61,7 @@ const useGetHighestScores = (
           })
           .filter(Boolean);
     
-        const sortedScores = userHighestScores.sort((a, b) => b.score - a.score);
+        const sortedScores = userHighestScores.sort((a:RankedScoreProps, b:RankedScoreProps) => b.score - a.score);
     
         setRankedScores(sortedScores as RankedScoreProps[]);
       } catch (error) {
