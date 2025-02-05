@@ -1,4 +1,4 @@
-export interface SaveScoreProps {
+interface ScoreProps {
   uuid: string;
   score: number;
   correctTypeCount: number;
@@ -14,7 +14,7 @@ export const saveScore = async ({
   incorrectTypeCount,
   accuracyRate,
   incorrectChars,
-}: SaveScoreProps): Promise<void> => {
+}: ScoreProps) => {
   try {
     const response = await fetch("http://localhost:3002/scores", {
       method: "POST",
@@ -32,9 +32,11 @@ export const saveScore = async ({
     });
 
     if (!response.ok) {
-      throw new Error("スコアの保存に失敗しました。");
+      throw new Error("スコアの保存に失敗しました");
     }
+
+    console.log("スコアが保存されました");
   } catch (error) {
-    console.error("スコアの保存に失敗しました。", error);
+    console.error("スコア保存エラー:", error);
   }
 };

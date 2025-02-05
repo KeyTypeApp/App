@@ -1,7 +1,7 @@
-import { words } from "@/domain/words";
+import { Word } from "@/shared/types/words";
+import words from "../../domain/words";
 
-export const getRandomWord = () => {
-  const wordsKeys = Object.keys(words);
-  const randomIndex = Math.floor(Math.random() * wordsKeys.length);
-  return wordsKeys[randomIndex];
-};
+export function getRandomWord(excludeId?: number): Word {
+  const availableWords = words.filter((word) => word.id !== excludeId);
+  return availableWords[Math.floor(Math.random() * availableWords.length)];
+}

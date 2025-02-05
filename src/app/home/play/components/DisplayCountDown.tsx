@@ -1,3 +1,15 @@
-export default function DisplayCountDown({ countdown }: { countdown: number }) {
-  return <h1>ゲーム開始まで: {countdown}秒</h1>;
+interface DisplayCountDownProps {
+  countdown: number;
 }
+
+const DisplayCountDownComponent = ({
+  countdown
+}: DisplayCountDownProps) => {
+  return (
+    <p className="text-5xl font-bold text-gray-900">
+      {countdown}
+    </p>
+  );
+};
+
+export default DisplayCountDownComponent;

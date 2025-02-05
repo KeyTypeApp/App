@@ -1,27 +1,80 @@
 "use client";
 
-import { useState } from "react";
-import DisplayCountDown from "./DisplayCountDown";
-import DisplayTimeLimit from "./DisplayTimeLimit";
-import DisplayRandomWord from "./DisplayRandomWord";
-import InputField from "./InputField";
-import DisplayScore from "./DisplayScore";
-import DisplayResult from "./DisplayResult";
-import { useGameLogic } from "@/hooks/play/useGameLogic";
+import { usePlay } from "@/hooks/play/usePlay";
+import DisplayCountDownComponent from "./DisplayCountDown";
+import DisplayResultComponent from "./DisplayResult";
+import DisplayTimeLimitComponent from "./DisplayTimeLimit";
+import DisplayRandomWordComponent from "./DisplayRandomWord";
+import InputFieldComponent from "./InputField";
+import DisplayScoreComponent from "./DisplayScore";
 
-export default function PlayPage() {
-  const { status, countdown, timeLeft, currentWord, currentVariation, input, score, accuracy, handleInputChange, handleKeyDown, inputRef } = useGameLogic();
+const PlayPageComponent = () => {
+  const {
+    status,
+    countdown,
+    timeLeft,
+    currentWord,
+    currentVariation,
+    input,
+    score,
+    correctTypeCount,
+    incorrectTypeCount,
+    accuracyRate,
+    inputRef,
+    handleInputChange,
+    handleKeyDown,
+  } = usePlay();
   
-  if (status === "ready") return <DisplayCountDown countdown={countdown} />;
-  if (status === "finish") return <DisplayResult score={score} accuracy={accuracy} />;
-  
+  if (status === "ready") {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] bg-gray-50 p-4 space-y-6">
+        <DisplayCountDownComponent
+          countdown={countdown}
+        />
+      </div>
+    );
+  }
+
+  if (status === "finish") {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] bg-gray-50 p-4 space-y-6">
+        <DisplayResultComponent
+          score={score}
+          correctTypeCount={correctTypeCount}
+          incorrectTypeCount={incorrectTypeCount}
+          accuracyRate={accuracyRate}
+        />
+      </div>
+    );
+  }
+ 
   return (
-    <div onClick={(e) => e.preventDefault()}> {/* クリックイベントをキャンセル */}
-      <h1>タイピングゲーム</h1>
-      <DisplayTimeLimit timeLeft={timeLeft} />
-      <DisplayRandomWord japanese={currentWord?.japanese} variation={currentVariation} />
-      <InputField input={input} handleChange={handleInputChange} handleKeyDown={handleKeyDown} inputRef={inputRef} />
-      <DisplayScore score={score} accuracy={accuracy} />
+    <div
+      onClick={(e) => e.preventDefault()}
+      className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] bg-gray-50 p-4 space-y-6"
+    >
+      <div className="flex flex-col items-center space-y-4">
+        <DisplayTimeLimitComponent
+          timeLeft={timeLeft}
+        />
+        <DisplayRandomWordComponent
+          japanese={currentWord?.japanese ?? ""}
+          variation={currentVariation}
+          input={input}
+        />
+        <InputFieldComponent
+          input={input}
+          handleChange={handleInputChange}
+          handleKeyDown={handleKeyDown}
+          inputRef={inputRef}
+        />
+        <DisplayScoreComponent
+          score={score}
+          accuracyRate={accuracyRate}
+        />
+      </div>
     </div>
   );
 }
+
+export default PlayPageComponent;

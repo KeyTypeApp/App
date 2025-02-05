@@ -1,9 +1,9 @@
-import PlayPage from "./components/PlayPage";
+import PlayPageComponent from "./components/PlayPage";
 
 export default function page() {
   return (
     <main>
-      <PlayPage />
+      <PlayPageComponent />
     </main>
   );
 }
