@@ -28,7 +28,7 @@ const RegisterFormComponent = ({
           placeholder="NAME"
           value={name}
           onChange={onChangeName}
-          className="bg-gray-100 border border-gray-300 text-gray-900 rounded-lg p-4 w-full transition duration-300 ease-in-out transform focus:border-blue-500 focus:ring focus:ring-blue-200 hover:shadow-md"
+          className="bg-gray-100 border border-gray-300 text-gray-900 rounded-lg p-4 w-full transition duration-300 ease-in-out transform focus:outline-none"
         />
       </div>
       <div className="mb-6">
@@ -38,7 +38,7 @@ const RegisterFormComponent = ({
           placeholder="PASSWORD"
           value={pass}
           onChange={onChangePass}
-          className="bg-gray-100 border border-gray-300 text-gray-900 rounded-lg p-4 w-full transition duration-300 ease-in-out transform focus:border-blue-500 focus:ring focus:ring-blue-200 hover:shadow-md"
+          className="bg-gray-100 border border-gray-300 text-gray-900 rounded-lg p-4 w-full transition duration-300 ease-in-out transform focus:outline-none"
         />
       </div>
       <button

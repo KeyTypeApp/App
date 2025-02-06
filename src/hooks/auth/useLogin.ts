@@ -17,7 +17,7 @@ const useLogin = (users_url: string) => {
     if (name && pass) {
       const user = await processLogin(name, pass, users_url);
       if (user) {
-        const res = await fetch('/api/setCookie', {
+        const response = await fetch('/api/setCookie', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -25,8 +25,8 @@ const useLogin = (users_url: string) => {
           body: JSON.stringify(user),
         });
 
-        if (res.ok) {
-          router.push("../home/");
+        if (response.ok) {
+          router.push("/home");
         } else {
           setErrorMessage("クッキーの設定に失敗しました。");
         }
