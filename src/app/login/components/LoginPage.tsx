@@ -2,6 +2,7 @@
 
 import useLogin from "@/hooks/auth/useLogin";
 import LoginFormComponent from "./LoginForm";
+import NoLoginButtonComponent from "./NoLoginButton";
 
 interface LoginPageProps {
   users_url: string | undefined;
@@ -13,10 +14,9 @@ const LoginPageComponent = ({
   const {
     name,
     pass,
-    errorMessage,
     setName,
     setPass,
-    handleSubmit
+    handleLogin
   } = useLogin(users_url!);
 
   return (
@@ -26,9 +26,9 @@ const LoginPageComponent = ({
         pass={pass}
         onChangeName={(e) => setName(e.target.value)}
         onChangePass={(e) => setPass(e.target.value)}
-        onSubmitForm={handleSubmit}
+        onSubmitForm={handleLogin}
       />
-      {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+      <NoLoginButtonComponent />
     </div>
   );
 };

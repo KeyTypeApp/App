@@ -12,7 +12,7 @@ export const usePlay = () => {
   const [correctTypeCount, setCorrectTypeCount] = useState(0);
   const [incorrectTypeCount, setIncorrectTypeCount] = useState(0);
   const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [countdown, setCountdown] = useState(3);
   const [accuracyRate, setAccuracy] = useState(0);
   const [incorrectChars, setIncorrectChars] = useState<{ [key: string]: number }>({});
@@ -75,7 +75,7 @@ export const usePlay = () => {
       setTimeout(() => countdownTimer(remaining - 1), 1000);
     } else {
       setStatus("start");
-      setTimeLeft(30);
+      setTimeLeft(60);
       startNewWord();
     }
   };

@@ -3,10 +3,10 @@ import { useRouter } from "next/navigation";
 const useLogout = () => {
   const router = useRouter();
 
-  const handleClick = async () => {
+  const handleLogout = async () => {
     try {
-      const res = await fetch("/api/clearCookie", { method: "POST" });
-      if (res.ok) {
+      const response = await fetch("/api/clearCookie", { method: "POST" });
+      if (response.ok) {
         router.push("/login");
       } else {
         console.error("ログアウトに失敗しました");
@@ -16,7 +16,7 @@ const useLogout = () => {
     }
   };
   return (
-    handleClick
+    handleLogout
   );
 }
 

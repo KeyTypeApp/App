@@ -1,99 +1,156 @@
 {
   "scores": [
     {
-      "id": "7143",
+      "id": "c63c",
       "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 531,
-      "correctTypeCount": 303,
-      "incorrectTypeCount": 35,
-      "accuracyRate": 90,
+      "score": 354,
+      "correctTypeCount": 360,
+      "incorrectTypeCount": 22,
+      "accuracyRate": 94,
       "incorrectChars": {
-        "0": 2,
-        "k": 3,
-        "u": 3,
-        "r": 4,
-        "a": 3,
-        "n": 2,
-        "b": 1,
+        "0": 1,
+        "n": 6,
+        "r": 1,
+        "u": 2,
+        "w": 2,
+        "a": 2,
+        "p": 1,
+        "t": 2,
+        "s": 2,
+        "z": 1,
+        "e": 1,
+        "i": 1
+      }
+    },
+    {
+      "id": "f6be",
+      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
+      "score": 355,
+      "correctTypeCount": 348,
+      "incorrectTypeCount": 19,
+      "accuracyRate": 95,
+      "incorrectChars": {
         "o": 5,
         "t": 1,
-        "s": 2,
-        "y": 1,
-        "g": 2,
         "i": 2,
-        "h": 1,
+        "g": 1,
+        "a": 3,
         "p": 2,
-        "m": 1
+        "s": 1,
+        "u": 1,
+        "r": 1,
+        "e": 1,
+        "n": 1
       }
     },
     {
-      "id": "e115",
+      "id": "d7bf",
       "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 146,
-      "correctTypeCount": 136,
-      "incorrectTypeCount": 4,
+      "score": 344,
+      "correctTypeCount": 367,
+      "incorrectTypeCount": 25,
+      "accuracyRate": 94,
+      "incorrectChars": {
+        "a": 6,
+        "n": 1,
+        "o": 3,
+        "i": 2,
+        "w": 3,
+        "r": 3,
+        "s": 4,
+        "j": 1,
+        "m": 1,
+        "e": 1
+      }
+    },
+    {
+      "id": "fd1a",
+      "uuid": "7ecc9737-0692-4565-aa30-ed786b558288",
+      "score": 355,
+      "correctTypeCount": 355,
+      "incorrectTypeCount": 10,
       "accuracyRate": 97,
       "incorrectChars": {
+        "i": 2,
         "p": 1,
-        "w": 1,
-        "n": 1,
-        "u": 1
+        "a": 1,
+        "n": 2,
+        "r": 3,
+        "k": 1
       }
     },
     {
-      "id": "2213",
-      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
-      "score": 144,
-      "correctTypeCount": 154,
-      "incorrectTypeCount": 20,
-      "accuracyRate": 89,
+      "id": "9b46",
+      "uuid": "7ecc9737-0692-4565-aa30-ed786b558288",
+      "score": 337,
+      "correctTypeCount": 354,
+      "incorrectTypeCount": 16,
+      "accuracyRate": 96,
+      "incorrectChars": {
+        "r": 1,
+        "t": 3,
+        "s": 3,
+        "u": 2,
+        "a": 1,
+        "e": 1,
+        "i": 1,
+        "p": 2,
+        "o": 2
+      }
+    },
+    {
+      "id": "f8ed",
+      "uuid": "7ecc9737-0692-4565-aa30-ed786b558288",
+      "score": 369,
+      "correctTypeCount": 367,
+      "incorrectTypeCount": 11,
+      "accuracyRate": 97,
+      "incorrectChars": {
+        "s": 1,
+        "o": 2,
+        "i": 3,
+        "a": 2,
+        "t": 1,
+        "u": 1,
+        "r": 1
+      }
+    },
+    {
+      "id": "489a",
+      "uuid": "574485db-bbbd-4f5a-b6ab-2a0637f72290",
+      "score": 335,
+      "correctTypeCount": 364,
+      "incorrectTypeCount": 26,
+      "accuracyRate": 93,
+      "incorrectChars": {
+        "i": 4,
+        "a": 3,
+        "s": 1,
+        "o": 2,
+        "n": 7,
+        "g": 1,
+        "r": 2,
+        "e": 2,
+        "k": 1,
+        "u": 2,
+        "b": 1
+      }
+    },
+    {
+      "id": "b726",
+      "uuid": "574485db-bbbd-4f5a-b6ab-2a0637f72290",
+      "score": 356,
+      "correctTypeCount": 359,
+      "incorrectTypeCount": 13,
+      "accuracyRate": 97,
       "incorrectChars": {
         "u": 2,
-        "n": 8,
-        "k": 1,
-        "r": 2,
-        "a": 3,
+        "r": 1,
+        "o": 3,
         "i": 2,
-        "b": 1,
-        "o": 1
-      }
-    },
-    {
-      "id": "9ced",
-      "uuid": "7ecc9737-0692-4565-aa30-ed786b558288",
-      "score": 140,
-      "correctTypeCount": 162,
-      "incorrectTypeCount": 19,
-      "accuracyRate": 90,
-      "incorrectChars": {
-        "w": 1,
-        "u": 3,
-        "n": 3,
-        "h": 1,
-        "j": 1,
-        "o": 2,
-        "r": 2,
-        "i": 3,
-        "t": 1,
-        "k": 1,
-        "s": 1
-      }
-    },
-    {
-      "id": "16c1",
-      "uuid": "7ecc9737-0692-4565-aa30-ed786b558288",
-      "score": 145,
-      "correctTypeCount": 165,
-      "incorrectTypeCount": 14,
-      "accuracyRate": 92,
-      "incorrectChars": {
-        "s": 3,
-        "w": 4,
-        "a": 3,
-        "n": 1,
-        "x": 1,
-        "i": 1,
-        "e": 1
+        "p": 1,
+        "n": 2,
+        "a": 2
       }
     }
   ]
