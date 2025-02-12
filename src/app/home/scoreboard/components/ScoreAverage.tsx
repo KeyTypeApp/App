@@ -39,6 +39,6 @@ const ScoreAverageComponent = ({ scores_url }: ScoreAverageProps) => {
       スコアがありません！
     </p>
   );
-};
+}
 
 export default ScoreAverageComponent;

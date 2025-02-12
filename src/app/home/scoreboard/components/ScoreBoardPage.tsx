@@ -42,6 +42,6 @@ const ScoreBoardPageComponent = ({ scores_url }: ScoreBoardPageProps) => {
       <MenuButtonComponent />
     </div>
   );
-};
+}
 
 export default ScoreBoardPageComponent;

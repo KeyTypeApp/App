@@ -7,4 +7,4 @@ export default function Register() {
       <RegisterPageComponent users_url={dbConfig.users_url} />
     </main>
   );
-};
+}

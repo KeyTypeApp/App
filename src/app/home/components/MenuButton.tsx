@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { DisplayNameProps } from "@/shared/types/name";
 
-const MenuButtonComponent = () => {
+const MenuButtonComponent = ({
+  name
+}: DisplayNameProps
+) => {
   return (
     <div className="flex flex-col items-center mt-52">
       <div className="mb-10">
@@ -14,14 +18,16 @@ const MenuButtonComponent = () => {
         </Link>
       </div>
       <div className="flex space-x-2">
-        <Link href="/home/scoreboard">
-          <button
-            type="submit"
-            className="bg-green-500 text-white rounded-lg py-4 px-4 text-lg font-semibold shadow-md transition duration-300 hover:bg-green-600 hover:shadow-l"
-          >
-            スコア一覧
-          </button>
-        </Link>
+        {name && (
+          <Link href="/home/scoreboard">
+            <button
+              type="submit"
+              className="bg-green-500 text-white rounded-lg py-4 px-4 text-lg font-semibold shadow-md transition duration-300 hover:bg-green-600 hover:shadow-l"
+            >
+              スコア一覧
+            </button>
+          </Link>
+        )}
         <Link href="/home/ranking">
           <button
             type="submit"
@@ -33,6 +39,6 @@ const MenuButtonComponent = () => {
       </div>
     </div>
   );
-};
+}
 
 export default MenuButtonComponent;

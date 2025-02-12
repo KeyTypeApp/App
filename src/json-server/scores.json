@@ -152,6 +152,68 @@
         "n": 2,
         "a": 2
       }
+    },
+    {
+      "id": "d2e7",
+      "uuid": "804c3313-90f4-403b-a39f-47079a3ec634",
+      "score": 305,
+      "correctTypeCount": 311,
+      "incorrectTypeCount": 19,
+      "accuracyRate": 94,
+      "incorrectChars": {
+        "0": 2,
+        "t": 2,
+        "^": 1,
+        "i": 5,
+        "l": 1,
+        "j": 1,
+        "r": 1,
+        "u": 2,
+        "e": 1,
+        "s": 1,
+        "n": 2
+      }
+    },
+    {
+      "id": "cb30",
+      "uuid": "7ecc9737-0692-4565-aa30-ed786b558288",
+      "score": 308,
+      "correctTypeCount": 311,
+      "incorrectTypeCount": 25,
+      "accuracyRate": 93,
+      "incorrectChars": {
+        "i": 4,
+        "p": 1,
+        "r": 4,
+        "u": 3,
+        "o": 3,
+        "s": 3,
+        "-": 2,
+        "n": 3,
+        "e": 1,
+        "t": 1
+      }
+    },
+    {
+      "id": "cdfa",
+      "uuid": "574485db-bbbd-4f5a-b6ab-2a0637f72290",
+      "score": 318,
+      "correctTypeCount": 333,
+      "incorrectTypeCount": 34,
+      "accuracyRate": 91,
+      "incorrectChars": {
+        "n": 7,
+        "u": 2,
+        "a": 5,
+        "r": 8,
+        "i": 4,
+        "w": 1,
+        "p": 1,
+        "k": 2,
+        "b": 2,
+        "o": 1,
+        "j": 1
+      }
     }
   ]
 }

@@ -14,7 +14,7 @@ const useName = () => {
           setName(data.user.name);
         }
       } catch (error) {
-        console.error("取得失敗", error);
+        console.error("cookieを取得できませんでした。", error);
       }
     };
     fetchUser();

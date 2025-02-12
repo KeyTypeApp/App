@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     maxAge: 0,
   });
 
-  const res = NextResponse.json({ message: "クッキーを削除しました" });
+  const res = NextResponse.json({ message: "クッキーを削除しました。" });
   res.headers.append("Set-Cookie", cookie);
 
   return res;

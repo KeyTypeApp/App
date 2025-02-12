@@ -72,6 +72,6 @@ const ScoreListComponent = ({ scores_url }: ScoreListProps) => {
       )}
     </div>
   );
-};
+}
 
 export default ScoreListComponent;

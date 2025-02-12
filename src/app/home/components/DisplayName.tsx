@@ -1,9 +1,6 @@
-import useLogout from "@/hooks/auth/useLogout";
 import { useRouter } from "next/navigation";
-
-interface DisplayNameProps {
-  name: string | null;
-}
+import { DisplayNameProps } from "@/shared/types/name";
+import useLogout from "@/hooks/auth/useLogout";
 
 const DisplayNameComponent = ({
   name

@@ -65,7 +65,7 @@ export const usePlay = () => {
         incorrectChars
       });
     } catch (error) {
-      console.error("Error fetching UUID:", error);
+      console.error("スコアを保存できませんでした。", error);
     }
   };
 

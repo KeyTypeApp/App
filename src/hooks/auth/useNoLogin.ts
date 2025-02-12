@@ -1,13 +1,13 @@
 import { useRouter } from "next/navigation";
 
-const useLogout = () => {
+const useNoLogin = () => {
   const router = useRouter();
 
-  const handleLogout = async () => {
+  const handleNoLogin = async () => {
     try {
       const response = await fetch("/api/clearCookie", { method: "POST" });
       if (response.ok) {
-        router.push("/login");
+        router.push("/home");
       } else {
         console.error("cookieを削除できませんでした。");
       }
@@ -16,8 +16,8 @@ const useLogout = () => {
     }
   };
   return (
-    handleLogout
+    handleNoLogin
   );
 }
 
-export default useLogout;
+export default useNoLogin;

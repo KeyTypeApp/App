@@ -11,7 +11,9 @@ export default function Home () {
       <DisplayNameComponent
         name={name}
       />
-      <MenuButtonComponent />
+      <MenuButtonComponent
+        name={name}
+      />
     </main>
   );
-};
+}
