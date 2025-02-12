@@ -1,26 +1,244 @@
 {
   "scores": [
     {
-      "id": "82542f82-5e1e-4a41-8e76-3ff3d89833ce",
-      "scoreID": "2883d736-88fc-4026-b233-10a4f0284672",
-      "score": 385,
-      "correct": 83,
-      "incorrect": 3,
-      "missedAlphabet": [
-        {
-          "alphabet": "s",
-          "counts": 1
-        },
-        {
-          "alphabet": "a",
-          "counts": 1
-        },
-        {
-          "alphabet": "o",
-          "counts": 1
-        }
-      ],
-      "accuracyRate": 96.5
+      "id": "1d37",
+      "uuid": "4cb4b92c-26af-4cfc-8604-c08c2b983104",
+      "score": 232,
+      "correctTypeCount": 281,
+      "incorrectTypeCount": 8,
+      "accuracyRate": 97,
+      "incorrectChars": {
+        "n": 2,
+        "r": 1,
+        "u": 1,
+        "o": 1,
+        "s": 1,
+        "a": 2
+      }
+    },
+    {
+      "id": "156e",
+      "uuid": "4cb4b92c-26af-4cfc-8604-c08c2b983104",
+      "score": 195,
+      "correctTypeCount": 264,
+      "incorrectTypeCount": 12,
+      "accuracyRate": 96,
+      "incorrectChars": {
+        "k": 1,
+        "l": 1,
+        "u": 2,
+        "i": 3,
+        "m": 1,
+        "o": 1,
+        "t": 1,
+        "z": 1,
+        "r": 1
+      }
+    },
+    {
+      "id": "3b1d",
+      "uuid": "4cb4b92c-26af-4cfc-8604-c08c2b983104",
+      "score": 207,
+      "correctTypeCount": 260,
+      "incorrectTypeCount": 19,
+      "accuracyRate": 93,
+      "incorrectChars": {
+        "o": 5,
+        "w": 2,
+        "i": 3,
+        "a": 3,
+        "s": 2,
+        "e": 1,
+        "n": 1,
+        "u": 1,
+        "y": 1
+      }
+    },
+    {
+      "id": "0ee7",
+      "uuid": "833a6298-9658-4a42-9fa0-93362eb3ca74",
+      "score": 243,
+      "correctTypeCount": 313,
+      "incorrectTypeCount": 21,
+      "accuracyRate": 94,
+      "incorrectChars": {
+        "n": 5,
+        "s": 2,
+        "w": 1,
+        "o": 1,
+        "a": 4,
+        "t": 1,
+        "u": 2,
+        "y": 3,
+        "i": 1,
+        "g": 1
+      }
+    },
+    {
+      "id": "11b7",
+      "uuid": "833a6298-9658-4a42-9fa0-93362eb3ca74",
+      "score": 259,
+      "correctTypeCount": 312,
+      "incorrectTypeCount": 12,
+      "accuracyRate": 96,
+      "incorrectChars": {
+        "0": 1,
+        "a": 2,
+        "n": 2,
+        "e": 1,
+        "i": 1,
+        "y": 1,
+        "w": 1,
+        "o": 2,
+        "b": 1
+      }
+    },
+    {
+      "id": "2139",
+      "uuid": "833a6298-9658-4a42-9fa0-93362eb3ca74",
+      "score": 251,
+      "correctTypeCount": 306,
+      "incorrectTypeCount": 23,
+      "accuracyRate": 93,
+      "incorrectChars": {
+        "g": 1,
+        "a": 3,
+        "j": 2,
+        "n": 2,
+        "o": 3,
+        "w": 1,
+        "i": 3,
+        "u": 3,
+        "s": 1,
+        "r": 1,
+        "v": 1,
+        "h": 2
+      }
+    },
+    {
+      "id": "626b",
+      "uuid": "224ce33d-9f93-4d83-877b-822800f56552",
+      "score": 235,
+      "correctTypeCount": 295,
+      "incorrectTypeCount": 20,
+      "accuracyRate": 94,
+      "incorrectChars": {
+        "p": 1,
+        "u": 2,
+        "i": 1,
+        "m": 3,
+        "o": 3,
+        "e": 1,
+        "n": 4,
+        "@": 1,
+        "a": 3,
+        "h": 1
+      }
+    },
+    {
+      "id": "d59c",
+      "uuid": "224ce33d-9f93-4d83-877b-822800f56552",
+      "score": 274,
+      "correctTypeCount": 313,
+      "incorrectTypeCount": 18,
+      "accuracyRate": 95,
+      "incorrectChars": {
+        "a": 4,
+        "q": 1,
+        "n": 2,
+        "h": 1,
+        "d": 1,
+        "j": 2,
+        "i": 3,
+        "s": 1,
+        "w": 2,
+        "o": 1
+      }
+    },
+    {
+      "id": "4dde",
+      "uuid": "224ce33d-9f93-4d83-877b-822800f56552",
+      "score": 238,
+      "correctTypeCount": 300,
+      "incorrectTypeCount": 17,
+      "accuracyRate": 95,
+      "incorrectChars": {
+        "i": 3,
+        "n": 1,
+        "w": 1,
+        "r": 2,
+        "u": 2,
+        "a": 3,
+        "g": 1,
+        "y": 1,
+        "o": 3
+      }
+    },
+    {
+      "id": "f521",
+      "uuid": "cb529fab-1624-4ff5-8a04-c2ac3e880c98",
+      "score": 265,
+      "correctTypeCount": 306,
+      "incorrectTypeCount": 18,
+      "accuracyRate": 94,
+      "incorrectChars": {
+        "h": 1,
+        "w": 1,
+        "o": 1,
+        "n": 2,
+        "i": 2,
+        "a": 3,
+        "k": 2,
+        "e": 1,
+        "u": 2,
+        "-": 1,
+        "t": 1,
+        "m": 1
+      }
+    },
+    {
+      "id": "bbc9",
+      "uuid": "cb529fab-1624-4ff5-8a04-c2ac3e880c98",
+      "score": 184,
+      "correctTypeCount": 281,
+      "incorrectTypeCount": 34,
+      "accuracyRate": 89,
+      "incorrectChars": {
+        "i": 6,
+        "f": 1,
+        "u": 7,
+        "d": 2,
+        "t": 1,
+        "r": 5,
+        "j": 1,
+        "-": 1,
+        "n": 2,
+        "o": 3,
+        "y": 1,
+        "k": 2,
+        "h": 1,
+        "a": 1
+      }
+    },
+    {
+      "id": "5499",
+      "uuid": "cb529fab-1624-4ff5-8a04-c2ac3e880c98",
+      "score": 240,
+      "correctTypeCount": 307,
+      "incorrectTypeCount": 23,
+      "accuracyRate": 93,
+      "incorrectChars": {
+        "h": 1,
+        "a": 5,
+        "s": 4,
+        "r": 2,
+        "u": 3,
+        "d": 1,
+        "z": 1,
+        "i": 2,
+        "w": 2,
+        "o": 2
+      }
     }
   ]
 }

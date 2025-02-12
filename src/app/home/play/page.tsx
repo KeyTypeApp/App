@@ -1,5 +1,9 @@
-export default function Play() {
+import PlayPageComponent from "./components/PlayPage";
+
+export default function page() {
   return (
-    <p>play</p>
-  )
+    <main>
+      <PlayPageComponent />
+    </main>
+  );
 }
