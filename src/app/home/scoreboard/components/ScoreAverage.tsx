@@ -1,13 +1,11 @@
 "use client";
 
+import { useConfContext } from "@/context/confContext";
 import useGetScores from "@/hooks/scoreboard/useGetScores";
 
-interface ScoreAverageProps {
-  scores_url: string | undefined;
-}
-
-const ScoreAverageComponent = ({ scores_url }: ScoreAverageProps) => {
-  const scores = useGetScores(scores_url);
+const ScoreAverageComponent = () => {
+  const { scoresUrl } = useConfContext();
+  const scores = useGetScores(scoresUrl);
 
   const playCount = scores.length;
 

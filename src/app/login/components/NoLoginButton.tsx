@@ -1,7 +1,7 @@
-import useNoLogin from "@/hooks/auth/useNoLogin";
+import useAuth from "@/hooks/auth/useAuth";
 
 const NoLoginButtonComponent = () => {
-  const handleNoLogin = useNoLogin();
+  const { handleNoLogin } = useAuth();
   return (
     <div className="flex justify-center mt-6">
       <button

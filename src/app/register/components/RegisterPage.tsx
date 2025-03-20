@@ -1,24 +1,27 @@
 "use client"
 
-import useRegister from "@/hooks/auth/useRegister";
+import useAuth from "@/hooks/auth/useAuth";
 import RegisterFormComponent from "./RegisterForm";
+import { useConfContext } from "@/context/confContext";
+import { useEffect } from "react";
 
-interface RegisterPageProps {
-  users_url: string | undefined;
-}
+const RegisterPageComponent = () => {
 
-const RegisterPageComponent = ({
-  users_url
-}: RegisterPageProps) => {
   const {
     name,
     pass,
-    successMessage,
-    errorMessage,
     setName,
     setPass,
-    handleSubmit
-  } = useRegister(users_url!);
+    handleSubmit,
+    setUsersUrl,
+    successMessage,
+    errorMessage
+  } = useAuth();
+  const { usersUrl } = useConfContext();
+
+  useEffect(() => {
+    setUsersUrl(usersUrl);
+  }, [usersUrl, setUsersUrl]);
 
   return (
     <div>

@@ -1,13 +1,11 @@
 "use client";
 
+import { useConfContext } from "@/context/confContext";
 import useGetScores from "@/hooks/scoreboard/useGetScores";
 
-interface ScoreListProps {
-  scores_url: string | undefined;
-}
-
-const ScoreListComponent = ({ scores_url }: ScoreListProps) => {
-  const scores = useGetScores(scores_url);
+const ScoreListComponent = () => {
+  const { scoresUrl } = useConfContext();
+  const scores = useGetScores(scoresUrl);
 
   return (
     <div>

@@ -23,6 +23,18 @@
       "uuid": "cb529fab-1624-4ff5-8a04-c2ac3e880c98",
       "name": "user04",
       "pass": "pass04"
+    },
+    {
+      "id": "29fb",
+      "uuid": "f387ad4e-70c9-4c0e-b7e2-f9242d37a81c",
+      "name": "NewUser",
+      "pass": "NewUser123"
+    },
+    {
+      "id": "2ec4",
+      "uuid": "1f2db146-6544-41ff-a511-a0e4ec506b9a",
+      "name": "kmjak",
+      "pass": "Kmjak@123"
     }
   ]
 }

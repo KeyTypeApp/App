@@ -1,17 +1,13 @@
 "use client";
 
 import MenuButtonComponent from "@/components/MenuButton";
+import { useConfContext } from "@/context/confContext";
 import useGetHighestScores from "@/hooks/ranking/useGetHightestScores";
 
-interface RankingPageProps {
-  users_url: string | undefined;
-  scores_url: string | undefined;
-}
 
-const RankingPageComponent = ({
-  users_url, scores_url
-}: RankingPageProps) => {
-  const rankedScores = useGetHighestScores(users_url, scores_url);
+const RankingPageComponent = () => {
+  const { usersUrl, scoresUrl } = useConfContext();
+  const rankedScores = useGetHighestScores(usersUrl, scoresUrl);
 
   return (
     <div>

@@ -1,12 +1,12 @@
 import { useRouter } from "next/navigation";
 import { DisplayNameProps } from "@/shared/types/name";
-import useLogout from "@/hooks/auth/useLogout";
+import useAuth from "@/hooks/auth/useAuth";
 
 const DisplayNameComponent = ({
   name
 }: DisplayNameProps
 ) => {
-  const handleLogout = useLogout();
+  const { handleLogout } = useAuth();
   const router = useRouter();
   return (
     <div className="flex flex-col items-end w-full pt-5 pr-5 space-y-6">

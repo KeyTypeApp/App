@@ -5,11 +5,7 @@ import MenuButtonComponent from "@/components/MenuButton";
 import ScoreListComponent from "./ScoreList";
 import ScoreAverageComponent from "./ScoreAverage";
 
-interface ScoreBoardPageProps {
-  scores_url: string | undefined;
-}
-
-const ScoreBoardPageComponent = ({ scores_url }: ScoreBoardPageProps) => {
+const ScoreBoardPageComponent = () => {
   const [viewMode, setViewMode] = useState<'list' | 'average'>('list');
   const handleClickList = () => {
     setViewMode('list');
@@ -37,7 +33,7 @@ const ScoreBoardPageComponent = ({ scores_url }: ScoreBoardPageProps) => {
         </button>
       </div>
       <div className="p-6 max-w-3xl mx-auto bg-gray-50 rounded-md shadow-md">
-        {viewMode === 'list' ? <ScoreListComponent scores_url={scores_url} /> : <ScoreAverageComponent scores_url={scores_url} />}
+        {viewMode === 'list' ? <ScoreListComponent /> : <ScoreAverageComponent />}
       </div>
       <MenuButtonComponent />
     </div>

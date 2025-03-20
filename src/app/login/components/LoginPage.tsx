@@ -1,23 +1,26 @@
 "use client"
 
-import useLogin from "@/hooks/auth/useLogin";
+import useAuth from "@/hooks/auth/useAuth";
 import LoginFormComponent from "./LoginForm";
 import NoLoginButtonComponent from "./NoLoginButton";
+import { useConfContext } from "@/context/confContext";
+import { useEffect } from "react";
 
-interface LoginPageProps {
-  users_url: string | undefined;
-}
-
-const LoginPageComponent = ({
-  users_url
-}: LoginPageProps) => {
+const LoginPageComponent = () => {
   const {
     name,
     pass,
     setName,
     setPass,
+    setUsersUrl,
     handleLogin
-  } = useLogin(users_url!);
+  } = useAuth();
+
+  const { usersUrl } = useConfContext();
+
+  useEffect(() => {
+    setUsersUrl(usersUrl);
+  }, [usersUrl, setUsersUrl]);
 
   return (
     <div>

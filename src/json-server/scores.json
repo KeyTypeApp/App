@@ -239,6 +239,30 @@
         "w": 2,
         "o": 2
       }
+    },
+    {
+      "id": "c623",
+      "uuid": "1f2db146-6544-41ff-a511-a0e4ec506b9a",
+      "score": 97,
+      "correctTypeCount": 145,
+      "incorrectTypeCount": 31,
+      "accuracyRate": 82,
+      "incorrectChars": {
+        "h": 2,
+        "k": 3,
+        "u": 4,
+        "a": 2,
+        "s": 1,
+        "i": 3,
+        "t": 1,
+        "n": 7,
+        "w": 1,
+        "o": 3,
+        "p": 1,
+        "r": 1,
+        "z": 1,
+        "e": 1
+      }
     }
   ]
 }
